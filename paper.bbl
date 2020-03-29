@@ -1,0 +1,25 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Mustermann%
+}{%
+Mustermann%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+example}
+\APACinsertmetastar {%
+example}%
+\begin{APACrefauthors}%
+Mustermann, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {{Beispielhafte Quelle}.} {{Beispielhafte Quelle}.}
+\newblock
+\begin{APACrefURL} \url{http://www.example.com/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
