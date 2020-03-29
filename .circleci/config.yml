@@ -4,31 +4,34 @@ jobs:
       docker:
       -  image: ikuba/grapatex:latest
       steps:
-      -  run: checkout
+      - checkout
       -  run: pdflatex paper.tex
       -  run: bibtex paper.aux
       -  run: makeglossaries paper
       -  run: pdflatex paper.tex
       -  run: pdflatex paper.tex
       -  persist_to_workspace:
-            root: ~/
-            paths: paper.pdf
+            root: .
+            paths: .
    pages:
       docker:
       -  image: node:8
       steps:
       - checkout
       -  attach_workspace:
-            at: ~/
+            at: .
       -  run: npm install -g --silent gh-pages
       -  run: git config --global user.email "$GH_EMAIL" > /dev/null 2>&1
       -  run: git config --global user.name "$GH_NAME" > /dev/null 2>&1
-      -  run: gh-pages --dist paper.pdf
+      -  run: gh-pages --dist .
 workflows:
    version: 2
-   maven_build:
+   main_build:
       jobs:
       - compile_pdf
       -  pages:
             requires:
             - compile_pdf
+            filters:
+               branches:
+                  only: master
