@@ -23,6 +23,8 @@
 \usepackage{apacite}
 \usepackage[acronym]{glossaries}
 \makeglossaries
+\newacronym{erm}{ERM}{Entity Relationship Model}
+\newacronym{uml}{UML}{Unified Markup Language}
 \begin{document}
 \pagenumbering{gobble}
 % Deckblatt
@@ -74,11 +76,41 @@ Bei der Suche sollen die klassischen Filterkriterien implementiert werden. Das h
 Zusätzlich soll ein Entfernungsfilter um einen möglichen Abflughafen bereitgestellt werden. Zum Beispiel wird nur nach Angeboten gesucht, bei dem sich der Startflughafen maximal 800km (Entfernungsfilter) vom Flughafen Stuttgart (möglicher Abflughafen) entfernt befindet.\newline
 Diese Flugsuchmaschine soll über ein Web-Frontend vom Nutzer bedient werden können. \cite{example}
 \section{Grundlagen}
+\subsection{Entity Relationship Model}
+Um das Datenmodell der Anwendung darzustellen wurde eine vereinfachte Variante des \acrfull{erm} verwendet.\\
+\subsection*{Entities}
+Ein Objekt oder Entity wird in einem Rechteck dargestellt und kann Attribute besitzen, wobei komplexe Attribute als Beziehungen zu anderen Objekten dargestellt werden. Der Name der Beziehung entspricht hierbei dem Attributnamen im Code. Die Anzahl der möglichen Relationen wird in \acrshort{uml}-Notation angegeben. Zum Beispiel ist in Abbildung \ref{fig:erm-entity} zu sehen, dass eine Person null bis n Autos besitzen kann.
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[width=\textwidth]{images/ERM-Entity}
+	\captionof{figure}[Beispiel für eine Entity im \acrshort{erm}]{Beispiel für eine Entity mit Attributen und einer Beziehung}
+	\label{fig:erm-entity}
+\end{center}
+\subsection*{Attribute}
+Attribute können dabei eindeutig, optional oder mehrwertig sein. Die Unterscheidung zwischen Datum, Zahl oder Zeichenkette wird in einem \acrlong{erm} nicht dargestellt.
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[width=10cm]{images/ERM-Attributes}
+	\captionof{figure}[Verschiedene Arten von Attributen im \acrshort{erm}]{Attribute (v.l.): eindeutig, optional und mehrwertig}
+	\label{fig:erm-attributes}
+\end{center}
 % Hauptteil
 \section{Entwurf}
 Hauptfrage:
 Wie kann man das beste Framework für die Oberfläche auswählen?
 Wie wählt man die beste API aus? (Kiwi, Google etc) -> Vergleichstabelle aus Anforderungen
+\subsection{Datenmodell}
+Das \acrlong{erm} für das Datenmodell wurde hier aufgeteilt in Suchanfrage (SearchRequest) und Antwort der Anwendung (SearchResult).
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[width=\textwidth]{images/datamodel-SearchRequest}
+	\captionof{figure}[\acrshort{erm} SearchRequest]{\acrlong{erm} des SearchRequest Objekts}
+\end{center}
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[width=\textwidth]{images/datamodel-SearchResult}
+	\captionof{figure}[\acrshort{erm} SearchResult]{\acrlong{erm} des SearchResult Objekts}
+\end{center}
 % Umsetzung
 \section{Implementierung}
 Wie portabel ist das System? -> Docker, React -> static html+js
