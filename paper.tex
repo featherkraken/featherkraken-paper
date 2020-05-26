@@ -129,20 +129,28 @@ Um Flugdaten zu erhalten muss eine externe Schnittstelle benutzt werden, welche 
 	\captionof{figure}[Vergleich der APIs]{Tabelle zum Vergleich der APIs}
 	\label{fig:api-comparison}
 \end{center}
+\newpage
 \subsection{Datenmodell}
-Das \acrlong{erm} für das Datenmodell wurde hier aufgeteilt in Suchanfrage (SearchRequest) und Antwort der Anwendung (SearchResult).
+Das \acrlong{erm} für das Datenmodell wurde hier aufgeteilt in Suchanfrage (\texttt{SearchRequest}) und Suchergebnis (\texttt{SearchResult}).
+\subsubsection{SearchRequest}
+Eingehende Anfragen an den Service (\texttt{SearchRequest}) haben verschiedene Parameter, welche die zuvor genannten Pflichtanforderungen abdecken. Komplexe Attribute wie die Zeitspanne (\texttt{Timespan}) für An- und Abreise sowie den Ursprungs- und Ziel-Flughafen (\texttt{Airport}) wurden in eigene Objekte ausgelagert, damit sie so wiederverwendet werden können.
 \begin{center}
 	\captionsetup{type=figure}
 	\includegraphics[width=\textwidth]{images/datamodel-SearchRequest}
 	\captionof{figure}[\acrshort{erm} SearchRequest]{\acrlong{erm} des SearchRequest Objekts}
 \end{center}
+\subsubsection{SearchResult}
+Antworten des Service (\texttt{SearchResult}) sind etwas komplexer als Anfragen aufgebaut, teilen jedoch manche Attribute beziehungsweise Objekte mit diesen. So enthält ein Suchergebnis eine Ansammlung von sogenannten \texttt{Trips}, welche sich aus Flügen (\texttt{Flight}) der An- und Abreise zusammensetzen. Diese Flügen haben widerrum selbstverständlich selbst jeweils einen Start- und Zielflughafen, welche in dem \texttt{Route}-Objekt mit Informationen zu Abflug- und Ankunftzeiten sowie der Airline enthalten sind.\\
+Bei erster Betrachtung fällt auf, dass Informationen über Airlines und Zeiten redundant sind, was jedoch für die optimale Anzeige in der Oberfläche gedacht ist.
 \begin{center}
 	\captionsetup{type=figure}
 	\includegraphics[width=\textwidth]{images/datamodel-SearchResult}
 	\captionof{figure}[\acrshort{erm} SearchResult]{\acrlong{erm} des SearchResult Objekts}
 \end{center}
+\newpage
 \subsection{Framework}
-Auswahl des Frameworks für Backend und Frontend
+Die Anwendung wird in eine Server- und eine Web-Anwendung unterteilt, für welche jeweils eine Framework-Technologie gewählt werden muss. Die Serveranwendung übersetzt Suchanfragen von der Oberfläche zu einem Format, welches die externe Schnittstelle akzeptiert und leitet das Sucherergebnis daraufhin an die Oberfläche zurück. Dies bedeutet, dass die Serveranwendung als Rest-Client für die externe Schnittstelle und selbst als Rest-Schnittstelle für die Oberfläche dient.\\
+Für die Komponenten war das Thema Plattformunabhängigkeit sehr wichtig und aus eigener Erfahrung eignet sich dafür Java sehr gut, da es eine große Community hat und eine Anwendung in kurzer Zeit aufgesetzt ist. Außerdem bietet Java einfache Möglichkeiten eine externe Rest-Schnittstelle anzusprechen. Als Bedingung für die Web-Oberfläche ist es unabdingbar, dass die Anwendung intuitiv bedienbar ist und auf allen Endgeräten gut dargestellt werden kann. Für diesen Zweck kommen eigentlich nur drei Frameworks in Frage: Angular, React.js und Vue.js. Dabei wurde React gewählt, welches sich besser als Vue.js und Angular kleine Anwendungen eignet, wie es in diesem Fall zutrifft. Bei dem hier vorliegenden Fall wird es sogar eine sogenannte Single-Page-Webapplication, das heißt die gesamte Funktion kann auf einer Seite dargestellt werden.
 % Umsetzung
 \section{Implementierung}
 Wie portabel ist das System? -> Docker, React -> static html+js
@@ -153,6 +161,8 @@ Aspects of an API: speed? maybe Beständigkeit in der Speed?
 % Ende
 \section{Zusammenfassung}
 \subsection{Ausblick}
+-> mehr Schnittstellen anbinden (ist schon bereit dafür)
+-> jedoch nicht async
 -> Monitor speed of my requests!!
 % Literaturverzeichnis
 \newpage
