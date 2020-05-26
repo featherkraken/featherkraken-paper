@@ -8,7 +8,7 @@
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \linespread{1.25}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -20,21 +20,26 @@
 \usepackage[numbib,nottoc]{tocbibind}
 \usepackage{caption}
 \usepackage{verbatimbox}
+\usepackage{graphicx}
 \usepackage{apacite}
 \usepackage[acronym]{glossaries}
 \makeglossaries
+\newacronym{erm}{ERM}{Entity Relationship Model}
+\newacronym{uml}{UML}{Unified Markup Language}
 \begin{document}
 \pagenumbering{gobble}
 % Deckblatt
 \begin{center}
 \href{https://www.intension.de/}{\includegraphics[width=6cm]{images/intension}}\hfill\href{https://www.dhbw-stuttgart.de}{\includegraphics[width=4cm]{images/dhbw}}\\
 \large
-\vspace{3cm}Bestpreissuche für Flugangebote mit variablen Abflughäfen\\
-\vfill
+\vspace{3cm}
+\textbf{Featherkraken}: Bestpreissuche für Flugangebote mit variablen Abflughäfen\\
+\vspace{2cm}
+\includegraphics[width=4cm]{images/featherkraken}\\
 \textbf{\Large STUDIENARBEIT}
-\vspace{1cm}\\des Studienganges Informatik
-\\an der Dualen Hochschule Baden-Württemberg Stuttgart
 \vspace{1cm}
+\\des Studienganges Informatik
+\\an der Dualen Hochschule Baden-Württemberg Stuttgart
 \\von
 \\Ingo Kuba
 \end{center}
@@ -74,11 +79,71 @@ Bei der Suche sollen die klassischen Filterkriterien implementiert werden. Das h
 Zusätzlich soll ein Entfernungsfilter um einen möglichen Abflughafen bereitgestellt werden. Zum Beispiel wird nur nach Angeboten gesucht, bei dem sich der Startflughafen maximal 800km (Entfernungsfilter) vom Flughafen Stuttgart (möglicher Abflughafen) entfernt befindet.\newline
 Diese Flugsuchmaschine soll über ein Web-Frontend vom Nutzer bedient werden können. \cite{example}
 \section{Grundlagen}
+\subsection{Entity Relationship Model}
+Um das Datenmodell der Anwendung darzustellen wurde eine vereinfachte Variante des \acrfull{erm} verwendet.\\
+\subsection*{Entities}
+Ein Objekt oder Entity wird in einem Rechteck dargestellt und kann Attribute besitzen, wobei komplexe Attribute als Beziehungen zu anderen Objekten dargestellt werden. Der Name der Beziehung entspricht hierbei dem Attributnamen im Code. Die Anzahl der möglichen Relationen wird in \acrshort{uml}-Notation angegeben. Zum Beispiel ist in Abbildung \ref{fig:erm-entity} zu sehen, dass eine Person null bis n Autos besitzen kann.
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[width=\textwidth]{images/ERM-Entity}
+	\captionof{figure}[Beispiel für eine Entity im \acrshort{erm}]{Beispiel für eine Entity mit Attributen und einer Beziehung}
+	\label{fig:erm-entity}
+\end{center}
+\subsection*{Attribute}
+Attribute können dabei eindeutig, optional oder mehrwertig sein. Die Unterscheidung zwischen Datum, Zahl oder Zeichenkette wird in einem \acrlong{erm} nicht dargestellt.
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[width=10cm]{images/ERM-Attributes}
+	\captionof{figure}[Verschiedene Arten von Attributen im \acrshort{erm}]{Attribute (v.l.): eindeutig, optional und mehrwertig}
+	\label{fig:erm-attributes}
+\end{center}
 % Hauptteil
 \section{Entwurf}
-Hauptfrage:
-Wie kann man das beste Framework für die Oberfläche auswählen?
-Wie wählt man die beste API aus? (Kiwi, Google etc) -> Vergleichstabelle aus Anforderungen
+\subsection{Auswahl der externen API}
+Um Flugdaten zu erhalten muss eine externe Schnittstelle benutzt werden, welche die Pflichtanforderungen erfüllt und dabei leicht zu verwenden ist. Die Wahl der Schnittstelle fiel dabei auf eine Rest-API, da diese sehr einfach zu benutzen sind. Für die Auswahl des Anbieters wurde eine Tabelle\textsuperscript{\ref{fig:api-comparison}} erstellt, welche die Pflichtanforderungen mit den Funktionalitäten der jeweiligen Schnittstelle abgleicht. Dabei erfüllte die API von Kiwi nicht nur alle Anforderungen, sondern war auch sehr gut dokumentiert und mit Beispielen beschrieben. Des Weiteren bot Kiwi auch eine Rest-API um Flughäfen im Umkreis gegebener Koordinaten zu finden, was der Aufgabe entgegen kam.
+\begin{center}
+	\captionsetup{type=figure}
+	\resizebox{\textwidth}{!}
+	{\begin{tabular}{ l | c | c | c | c | c | c }
+		& \textbf{Skyscanner} & \textbf{Hipmunk} & \textbf{Kajak} & \textbf{Flight Data} & \textbf{Flight Bookings} & \textbf{Kiwi Flights}\\
+		\hline
+		\textbf{Single flight} & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{green!50}yes\\
+		\hline
+		\textbf{Two directions} & \cellcolor{red!75}no & \cellcolor{red!75}no & \cellcolor{red!75}no & \cellcolor{green!50}yes & \cellcolor{red!75}no & \cellcolor{green!50}yes\\
+		\hline
+		& & & & & &\\
+		\hline
+		\textbf{Specific date} & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{green!50}yes\\
+		\hline
+		\textbf{Flexible date} & \cellcolor{red!75}no & \cellcolor{yellow!75}limited & \cellcolor{yellow!75}limited & \cellcolor{green!50}yes & \cellcolor{red!75}no & \cellcolor{green!50}yes\\
+		\hline
+		& & & & & &\\
+		\hline
+		\textbf{Class} & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{yellow!75}limited & \cellcolor{green!50}yes & \cellcolor{green!50}yes\\
+		\hline
+		\textbf{Passengers} & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{green!50}yes & \cellcolor{red!75}no & \cellcolor{green!50}yes & \cellcolor{green!50}yes\\
+		\hline
+		\textbf{Airline} & \cellcolor{green!50}yes & \cellcolor{red!75}no & \cellcolor{red!75}no & \cellcolor{red!75}no & \cellcolor{red!75}no & \cellcolor{green!50}yes\\
+		\hline
+		\textbf{Stops} & \cellcolor{red!75}no & \cellcolor{red!75}no & \cellcolor{red!75}no & \cellcolor{red!75}no & \cellcolor{red!75}no & \cellcolor{green!50}yes
+	\end{tabular}}
+	\captionof{figure}[Vergleich der APIs]{Tabelle zum Vergleich der APIs}
+	\label{fig:api-comparison}
+\end{center}
+\subsection{Datenmodell}
+Das \acrlong{erm} für das Datenmodell wurde hier aufgeteilt in Suchanfrage (SearchRequest) und Antwort der Anwendung (SearchResult).
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[width=\textwidth]{images/datamodel-SearchRequest}
+	\captionof{figure}[\acrshort{erm} SearchRequest]{\acrlong{erm} des SearchRequest Objekts}
+\end{center}
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[width=\textwidth]{images/datamodel-SearchResult}
+	\captionof{figure}[\acrshort{erm} SearchResult]{\acrlong{erm} des SearchResult Objekts}
+\end{center}
+\subsection{Framework}
+Auswahl des Frameworks für Backend und Frontend
 % Umsetzung
 \section{Implementierung}
 Wie portabel ist das System? -> Docker, React -> static html+js
