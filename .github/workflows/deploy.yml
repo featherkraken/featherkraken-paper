@@ -2,10 +2,6 @@ name: Deploy to GitHub pages
 
 on: [push]
 
-runs:
-  using: 'docker'
-  image: ikuba/grapatex:latest
-
 jobs:
   compile:
     runs-on: ikuba/grapatex:latest
