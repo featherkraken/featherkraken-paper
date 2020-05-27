@@ -1,25 +1,46 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Mustermann%
-}{%
-Mustermann%
-}{%
-{\protect \APACyear {2020}}%
+\APACcitebtitle {{Differences between Java EE and Java SE}}}{%
+\APACcitebtitle {{Differences between Java EE and Java SE}}}{%
+{\protect \APACyear {2012}}%
 }]{%
-example}
+java-ee}
 \APACinsertmetastar {%
-example}%
+java-ee}%
+\APACrefbtitle {{Differences between Java EE and Java SE}.} {{Differences
+  between Java EE and Java SE}.}
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://docs.oracle.com/javaee/6/firstcup/doc/gkhoy.html}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Monteiro%
+}{%
+Monteiro%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+microprofile}
+\APACinsertmetastar {%
+microprofile}%
 \begin{APACrefauthors}%
-Mustermann, M.%
+Monteiro, J\BHBI L.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2020}{}{}.
+\APACrefYearMonthDay{2018}{}{}.
 \newblock
-\APACrefbtitle {{Beispielhafte Quelle}.} {{Beispielhafte Quelle}.}
+\APACrefbtitle {{What is Eclipse MicroProfile?}} {{What is Eclipse
+  MicroProfile?}}
 \newblock
-\begin{APACrefURL} \url{http://www.example.com/} \end{APACrefURL}
+\begin{APACrefURL}
+  \url{https://www.tomitribe.com/blog/what-is-eclipse-microprofile/}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
