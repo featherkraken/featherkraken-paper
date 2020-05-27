@@ -19,13 +19,16 @@
 \definecolor{light-yellow}{RGB}{255, 255, 204}
 \usepackage[numbib,nottoc]{tocbibind}
 \usepackage{caption}
-\usepackage{verbatimbox}
+\usepackage{fancyvrb}
 \usepackage{graphicx}
 \usepackage{apacite}
 \usepackage[acronym]{glossaries}
 \makeglossaries
 \newacronym{erm}{ERM}{Entity Relationship Model}
 \newacronym{uml}{UML}{Unified Markup Language}
+\newacronym{jakarta-ee}{Jakarta EE}{Jakarta Enterprise Edition}
+\newacronym{cdi}{CDI}{Context Dependency Injection}
+\newacronym{iata}{IATA}{IATA airport code}
 \begin{document}
 \pagenumbering{gobble}
 % Deckblatt
@@ -96,6 +99,22 @@ Attribute können dabei eindeutig, optional oder mehrwertig sein. Die Unterschei
 	\captionof{figure}[Verschiedene Arten von Attributen im \acrshort{erm}]{Attribute (v.l.): eindeutig, optional und mehrwertig}
 	\label{fig:erm-attributes}
 \end{center}
+\subsection{Jakarta EE}\label{sec:jakarta-ee}
+\acrfull{jakarta-ee} ist eine Spezifikation, welche Java SE (Standard Edition) erweitert und ermöglicht damit das Entwickeln von mehrschichtigen, zuverlässigen und sicheren Netzwerkanwendungen. Zuvor war Jakarta EE als Java EE bekannt.\newline\cite{java-ee}
+\subsection{MicroProfile}\label{sec:microprofile}
+Eclipse MicroProfile ist eine Erweiterung von \acrshort{jakarta-ee} und eine Alternative für Spring, welches ein Framework der Firma Pivotal ist und vielgenutzte Lösung für \acrshort{jakarta-ee} Anwendungen und Microservices.\newline
+MicroProfile bietet unter anderem Unterstützung für \acrfull{cdi}, sowie eine bessere Konfigurierbarkeit der Anwendung.\newline\cite{microprofile}
+\subsection{Payara}
+TODO
+\subsection{Docker}
+Docker ist eine quelloffene Software zur Isolierung von Anwendungen in sogenannten Containern. Mit ihr können zum Beispiel Webserver oder Datenbanken schnell eingerichtet werden, ohne diese vorher aufsetzen zu müssen.
+\subsubsection{Image}
+\textit{Images} sind die Vorlage zur Erstellung neuer Container. Sie können aus mehreren Schichten von anderen Images bestehen und so können komplexe Systeme leichtgewichtig und portabel erstellt werden.
+\subsubsection{Container}
+Ein \textit{Container} ist die aktive Instanz eines Docker images und kann beliebig konfiguriert und bearbeitet werden. Wird ein Container beendet und ein neuer nach der Vorlage desselben Images gestartet, gehen alle Änderungen verloren. Dies lässt sich durch die Verwendung von \textit{Volumes} verhindern, welche die Konfiguration eines Containers persistieren.
+\subsection{React.js}
+TODO
+\newpage
 % Hauptteil
 \section{Entwurf}
 \subsection{Auswahl der externen API}
@@ -129,30 +148,84 @@ Um Flugdaten zu erhalten muss eine externe Schnittstelle benutzt werden, welche 
 	\captionof{figure}[Vergleich der APIs]{Tabelle zum Vergleich der APIs}
 	\label{fig:api-comparison}
 \end{center}
+\newpage
 \subsection{Datenmodell}
-Das \acrlong{erm} für das Datenmodell wurde hier aufgeteilt in Suchanfrage (SearchRequest) und Antwort der Anwendung (SearchResult).
+Das \acrlong{erm} für das Datenmodell wurde hier aufgeteilt in Suchanfrage (\texttt{SearchRequest}) und Suchergebnis (\texttt{SearchResult}).
+\subsubsection{SearchRequest}
+Eingehende Anfragen an den Service (\texttt{SearchRequest}) haben verschiedene Parameter, welche die zuvor genannten Pflichtanforderungen abdecken. Komplexe Attribute wie die Zeitspanne (\texttt{Timespan}) für An- und Abreise sowie den Ursprungs- und Ziel-Flughafen (\texttt{Airport}) wurden in eigene Objekte ausgelagert, damit sie so wiederverwendet werden können.
 \begin{center}
 	\captionsetup{type=figure}
 	\includegraphics[width=\textwidth]{images/datamodel-SearchRequest}
 	\captionof{figure}[\acrshort{erm} SearchRequest]{\acrlong{erm} des SearchRequest Objekts}
 \end{center}
+\subsubsection{SearchResult}
+Antworten des Service (\texttt{SearchResult}) sind etwas komplexer als Anfragen aufgebaut, teilen jedoch manche Attribute beziehungsweise Objekte mit diesen. So enthält ein Suchergebnis eine Ansammlung von sogenannten \texttt{Trips}, welche sich aus Flügen (\texttt{Flight}) der An- und Abreise zusammensetzen. Diese Flügen haben widerrum selbstverständlich selbst jeweils einen Start- und Zielflughafen, welche in dem \texttt{Route}-Objekt mit Informationen zu Abflug- und Ankunftzeiten sowie der Airline enthalten sind.\\
+Bei erster Betrachtung fällt auf, dass Informationen über Airlines und Zeiten redundant sind, was jedoch für die optimale Anzeige in der Oberfläche gedacht ist.
 \begin{center}
 	\captionsetup{type=figure}
 	\includegraphics[width=\textwidth]{images/datamodel-SearchResult}
 	\captionof{figure}[\acrshort{erm} SearchResult]{\acrlong{erm} des SearchResult Objekts}
 \end{center}
+\newpage
 \subsection{Framework}
-Auswahl des Frameworks für Backend und Frontend
+Die Anwendung wird in eine Server- und eine Web-Anwendung unterteilt, für welche jeweils eine Framework-Technologie gewählt werden muss. Die Serveranwendung übersetzt Suchanfragen von der Oberfläche zu einem Format, welches die externe Schnittstelle akzeptiert und leitet das Sucherergebnis daraufhin an die Oberfläche zurück. Dies bedeutet, dass die Serveranwendung als Rest-Client für die externe Schnittstelle und selbst als Rest-Schnittstelle für die Oberfläche dient.\\
+Für die Komponenten war das Thema Plattformunabhängigkeit sehr wichtig und aus eigener Erfahrung eignet sich dafür Java sehr gut, da es eine große Community hat und eine Anwendung in kurzer Zeit aufgesetzt ist. Außerdem bietet Java einfache Möglichkeiten eine externe Rest-Schnittstelle anzusprechen.\\
+Als Bedingung für die Web-Oberfläche ist es unabdingbar, dass die Anwendung intuitiv bedienbar ist und auf allen Endgeräten gut dargestellt werden kann. Für diesen Zweck kommen eigentlich nur drei Frameworks in Frage: Angular, React.js und Vue.js. Dabei wurde React gewählt, welches sich besser als Vue.js und Angular für kleine Anwendungen eignet, wie es in diesem Fall zutrifft. Bei dem hier vorliegenden Fall wird es sogar eine sogenannte Single-Page-Webapplication, das heißt die gesamte Funktion kann auf einer Seite dargestellt werden.
 % Umsetzung
 \section{Implementierung}
-Wie portabel ist das System? -> Docker, React -> static html+js
+\subsection{Backend}
+Das Backend der Anwendung dient als Proxy zwischen Web-Frontend und externer API und wurde in Java geschrieben. Dabei wurde Jakarta EE\textsuperscript{\ref{sec:jakarta-ee}} und Eclipse Microprofile\textsuperscript{\ref{sec:microprofile}} verwendet, um eine Rest-Schnittstelle für die Suche von Flügen zu bieten. Durch das Verwenden von Microprofile lässt sich die Anwendung einfach in einem Payara Application Server starten. Dieser wurde mithilfe eines Docker Images umgesetzt und dadurch lässt er sich einfach in einer Cloud Umgebung oder klassisch auf einem Windows- oder Linux-Server deployen.
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[height=5cm]{images/backend-structure}
+	\captionof{figure}{Aufbau des Backends}
+\end{center}
+\subsubsection[Flughafensuche]{Flughafensuche: GET /airports}
+Um bestimmte Flughäfen mit einem Teil des Namens des Flughafens oder der Stadt suchen zu können, gibt es den Endpoint \texttt{/airports} der mit einem GET-Request erreicht werden kann. Die Eingabe wird über den Query-Parameter 'query' in der URL des Requests übergeben. Ein beispielhafter Request für die Suche von Flughäfen in Amsterdam kann zum Beispiel folgendermaßen aufgebaut sein:\\
+\begin{center}
+	\texttt{GET www.featherkraken-example.com/airports?query=Ams}
+\end{center}
+Damit werden alle Flughäfen gesucht, welche den Wortteil 'Ams' im \acrlong{iata} oder Städtenamen enthalten. Die Antwort des Services besteht aus einer Liste aus gefundenen Flughäfen, welche jeweils \acrlong{iata}, vollen Anzeigenamen und Koordinaten enthalten.
+\subsubsection[Flugsuche]{Flugsuche: POST /flights}
+Die Kernfunktion der Anwendung steckt hinter dem Endpoint \texttt{/flights}, welcher eingehende Suchanfragen in ein für die externe API verständliches Format übersetzt und das Suchergebnis dann zurückgibt. Suchparameter werden hier nicht in der URL des Requests übergeben, sondern mit einem POST im Request-Body, da die Suchanfrage so übersichtlicher und leichter zu dokumentieren ist. Bei der Suche kann wahlweise ein Radius angegeben werden, dann werden Flüge von umliegenden Abflughäfen gesucht. So kann eine Suchanfrage für Flüge von Frankfurt und Umgebung (100km) zum Beispiel so aussehen:\\
+\begin{Verbatim}
+{
+	"source": {
+		"name": "FRA",
+		"displayName": "Frankfurt International Airport",
+		"latitude": 50.033056,
+		"longitude": 8.570556
+	},
+	"target": {
+		"name": "LAX",
+		"displayName": "Los Angeles International",
+		"latitude": 33.9425,
+		"longitude": -118.40806
+	},
+	"radius": 100,
+	"passengers": 1,
+	"departure": {
+		"from": "11.11.2020"
+		"to": "13.11.2020"
+	},
+	"return": {
+		"from": "22.11.2020"
+	},
+	"classType": "Economy",
+	"tripType": "Round trip"
+}
+\end{Verbatim}
+Für die Flughafenobjekte in \texttt{source} und \texttt{target} ist nur der eindeutige \acrlong{iata} in \texttt{source.name} entscheidend. Der Radius wird in Kilometern angegeben. In diesem Beispiel werden Hin- und Rückflüge zwischen Frankfurt und Los Angeles in der Klasse 'Economy' gesucht. Außerdem ist zu erkennen, wie ein variables Abflugdatum (11.11. - 13.11.2020) angegeben werden kann.
 \section{Testing}
 Unit tests?
 How to test external api?
 Aspects of an API: speed? maybe Beständigkeit in der Speed?
+-> Postman
 % Ende
 \section{Zusammenfassung}
 \subsection{Ausblick}
+-> mehr Schnittstellen anbinden (ist schon bereit dafür)
+-> jedoch nicht async
 -> Monitor speed of my requests!!
 % Literaturverzeichnis
 \newpage
