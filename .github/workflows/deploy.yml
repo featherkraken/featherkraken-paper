@@ -1,0 +1,31 @@
+name: Deploy to GitHub pages
+
+on:
+  push:
+    branches:
+      - master
+
+runs:
+  using: 'docker'
+  image: ikuba/grapatex:latest
+
+jobs:
+  compile:
+    runs-on: ikuba/grapatex:latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: pdflatex paper.tex
+      - run: bibtex paper.aux
+      - run: makeglossaries paper
+      - run: pdflatex paper.tex
+      - run: pdflatex paper.tex
+  deploy:
+    runs-on: ikuba/grapatex:latest
+    needs: compile
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy pdf
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
