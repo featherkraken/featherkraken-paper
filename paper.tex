@@ -259,6 +259,17 @@ Außerdem gibt es Testfälle für das Frontend, um die Umsetzung der Anwendung m
 -> Monitor speed of my requests!!
 -> How to test external api?
 -> Aspects of an API: speed? maybe Beständigkeit in der Speed?
+-> GraphQL ?
+\subsection{Bekannte Probleme}
+In diesem Kapitel werden bekannte Einschränkungen und Fehler der Anwendung aufgelistet, welche nicht gelöst werden konnten, jedoch wird ein Lösungsansatz zum weiteren Vorgehen aufgeführt. Alle Probleme sind in GitHub Issues festgehalten, sodass sie nicht in Vergessenheit geraten können.
+\subsubsection{AirportsFinder}
+Die externe Schnittstelle \href{https://rapidapi.com/cometari/api/airportsfinder}{AirportsFinder} zur Suche von Flughäfen in einem bestimmten Radius scheint eine Priorisierung der Flughäfen oder eine Einschränkung der Ergebnismenge vorzunehmen. So kann man zum Beispiel den Flughafen 'Leipzig/Halle LEJ' von Berlin aus mit einem Radius von 150km finden, jedoch nicht von München mit einem Radius von 360km. Dies hat zur Folge, dass für manche Flüge nicht der absolut günstigste Flug gefunden werden kann. Deshalb muss in Zukunft eine andere externe Schnittstelle zum Suchen von Flughäfen in einem gegebenen Radius gefunden werden.
+\subsubsection{Suche mit gemischten Klassen}
+Die externe API für die Flugsuche bietet die Möglichkeit, mit dem Parameter \texttt{mix\_with\_cabins} über mehrere Klassen zu suchen, wenn keine Flüge in der angegebenen Klasse gefunden werden können. Diese Funktion ist bei der API von Kiwi.com nicht gut dokumentiert oder fehlerhaft umgesetzt. Zur Lösung für dieses Problem könnten weitere Anfragen mit anderen Klassen abgeschickt werden, wenn die gegebene Klasse keine Ergebnisse liefert.
+\subsubsection{Deployment des Backend}
+Es wurde versucht die Java-Anwendung auf \textit{Heroku} zu hosten, damit sie jederzeit im Internet genutzt werden kann. Dies war aber selbst nach vielen Tagen nicht nachvollziehbar, also wurde dieser Ansatz verworfen. Als Zwischenlösung könnte die Anwendung auf einem Linux-Server bereitgestellt werden. Dies sollte automatisch mit jeder Änderung im GitHub Repository erfolgen, wie es mit \textit{Heroku} versucht wurde.
+\subsubsection{Sortieren/Filtern der Suchergebnisse}
+Das Sortieren oder Filtern der Suchergebnisse - zum Beispiel nach Abflughafen oder Airline - stellte sich komplizierter als gedacht heraus. Leider konnte dazu kein Experte in React.js oder TypeScript gefunden werden. Wenn sich einer finden lässt, ist dieses Problem in angemessener Zeit zu lösen.
 % Literaturverzeichnis
 \newpage
 % set interlinepenalty to not split entries on page break
