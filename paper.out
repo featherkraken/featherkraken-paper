@@ -25,11 +25,12 @@
 \BOOKMARK [1][-]{section.5}{Testing}{}% 25
 \BOOKMARK [2][-]{subsection.5.1}{Automatische Tests}{section.5}% 26
 \BOOKMARK [2][-]{subsection.5.2}{Manuelle Tests}{section.5}% 27
-\BOOKMARK [1][-]{section.6}{Zusammenfassung}{}% 28
+\BOOKMARK [1][-]{section.6}{Fazit}{}% 28
 \BOOKMARK [2][-]{subsection.6.1}{Ausblick}{section.6}% 29
 \BOOKMARK [2][-]{subsection.6.2}{Bekannte Probleme}{section.6}% 30
 \BOOKMARK [3][-]{subsubsection.6.2.1}{AirportsFinder}{subsection.6.2}% 31
 \BOOKMARK [3][-]{subsubsection.6.2.2}{Suche mit gemischten Klassen}{subsection.6.2}% 32
 \BOOKMARK [3][-]{subsubsection.6.2.3}{Deployment des Backend}{subsection.6.2}% 33
 \BOOKMARK [3][-]{subsubsection.6.2.4}{Sortieren/Filtern der Suchergebnisse}{subsection.6.2}% 34
-\BOOKMARK [1][-]{section*.16}{Literatur}{}% 35
+\BOOKMARK [2][-]{subsection.6.3}{Zusammenfassung}{section.6}% 35
+\BOOKMARK [1][-]{section*.16}{Literatur}{}% 36
