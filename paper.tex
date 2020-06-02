@@ -29,6 +29,7 @@
 \newacronym{jakarta-ee}{Jakarta EE}{Jakarta Enterprise Edition}
 \newacronym{cdi}{CDI}{Context Dependency Injection}
 \newacronym{iata}{IATA}{IATA airport code}
+\newacronym{ci}{CI}{Continuous Integration}
 \begin{document}
 \pagenumbering{gobble}
 % Deckblatt
@@ -79,8 +80,10 @@ Gerade auf hochpreisigen Strecken kann es sich lohnen einen Umweg zu fliegen.
 \subsection{Aufgabenstellung}
 Bei der Suche sollen die klassischen Filterkriterien implementiert werden. Das heißt die Unterscheidung ob man nur einen Hinflug oder Hin- und Rückflug buchen möchte. Des weiteren soll man jeweils ein Datum für An- und Abreise festlegen können, welches um drei Tage flexibel sein soll. Neben der Buchungsklasse (Economy, Business, First Class) soll auch die Wahl der Airline oder Allianz eingeschränkt werden können. Außerdem soll man Passagier- und Umsteigeanzahl wählen können.\newline
 Zusätzlich soll ein Entfernungsfilter um einen möglichen Abflughafen bereitgestellt werden. Zum Beispiel wird nur nach Angeboten gesucht, bei dem sich der Startflughafen maximal 800km (Entfernungsfilter) vom Flughafen Stuttgart (möglicher Abflughafen) entfernt befindet.\newline
-Diese Flugsuchmaschine soll über ein Web-Frontend vom Nutzer bedient werden können. \cite{example}
-\section{Grundlagen}
+Diese Flugsuchmaschine soll über ein Web-Frontend vom Nutzer bedient werden können.
+\newpage
+\section{Wissenschaftliche Vertiefung}
+In diesem Kapitel werden technische Grundlagen aufgeführt und erläutert, welche für die Entwicklung des Projekts benötigt wurden.
 \subsection{Entity Relationship Model}
 Um das Datenmodell der Anwendung darzustellen wurde eine vereinfachte Variante des \acrfull{erm} verwendet.\\
 \subsection*{Entities}
@@ -105,7 +108,8 @@ Attribute können dabei eindeutig, optional oder mehrwertig sein. Die Unterschei
 Eclipse MicroProfile ist eine Erweiterung von \acrshort{jakarta-ee} und eine Alternative für Spring, welches ein Framework der Firma Pivotal ist und vielgenutzte Lösung für \acrshort{jakarta-ee} Anwendungen und Microservices.\newline
 MicroProfile bietet unter anderem Unterstützung für \acrfull{cdi}, sowie eine bessere Konfigurierbarkeit der Anwendung.\newline\cite{microprofile}
 \subsection{Payara}
-TODO
+Payara ist ein Application Server für Java-Anwendungen, insbesondere \acrshort{jakarta-ee}. Ein Application Server führt Anwendungsprogramme aus und bietet zum Beispiel Dienste für Restschnittstellen, Authentifizierung oder Datenbankzugriff. \cite{app-server}\newline
+Payara basiert auf dem GlassFish Server, erweitert diesen jedoch um besseren Support sowie regelmäßigere Releases und Sicherheitsupdates.\newline\cite{payara-vs-glassfish}
 \subsection{Docker}
 Docker ist eine quelloffene Software zur Isolierung von Anwendungen in sogenannten Containern. Mit ihr können zum Beispiel Webserver oder Datenbanken schnell eingerichtet werden, ohne diese vorher aufsetzen zu müssen.
 \subsubsection{Image}
@@ -113,7 +117,7 @@ Docker ist eine quelloffene Software zur Isolierung von Anwendungen in sogenannt
 \subsubsection{Container}
 Ein \textit{Container} ist die aktive Instanz eines Docker images und kann beliebig konfiguriert und bearbeitet werden. Wird ein Container beendet und ein neuer nach der Vorlage desselben Images gestartet, gehen alle Änderungen verloren. Dies lässt sich durch die Verwendung von \textit{Volumes} verhindern, welche die Konfiguration eines Containers persistieren.
 \subsection{React.js}
-TODO
+React.js ist eine JavaScript Bibliothek um Webanwendungen zu entwickeln. Damit lassen sich einfach interaktive Oberflächen erstellen, indem man \textit{Views} für jede Komponente der Anwendung definiert. Dabei rendert React nur eine Komponente neu, wenn sich dessen Daten ändern. Dadurch wird die Anwendung effizient und der Code wird übersichtlicher und einfacher zu debuggen. Außerdem lassen sich Komponenten abstrakt definieren und mehrfach verwenden, was der gesamten Anwendung ein einheitliches Aussehen gibt. \cite{react}
 \newpage
 % Hauptteil
 \section{Entwurf}
@@ -217,6 +221,10 @@ Die Kernfunktion der Anwendung steckt hinter dem Endpoint \texttt{/flights}, wel
 \end{Verbatim}
 Für die Flughafenobjekte in \texttt{source} und \texttt{target} ist nur der eindeutige \acrlong{iata} in \texttt{source.name} entscheidend. Der Radius wird in Kilometern angegeben. In diesem Beispiel werden Hin- und Rückflüge zwischen Frankfurt und Los Angeles in der Klasse 'Economy' gesucht. Außerdem ist zu erkennen, wie ein variables Abflugdatum (11.11. - 13.11.2020) angegeben werden kann.
 \section{Testing}
+Das Testen der Anwendung war ein wichtiger Teil für den Erfolg des Projekts. Deshalb wurden nicht nur alle Software-Komponenten mit Unit-Tests abgedeckt, sondern auch Integrations-Tests geschrieben. All diese Tests werden programmatisch ausgeführt und werden von einer \acrshort{ci} in GitHub automatisch bei jedem \textit{push} ausgeführt. Ein \textit{merge} in den Master ist nur möglich wenn alle Tests erfolgreich ausgeführt wurden. Für alle Testfälle wurden realitätsnahe Bedingungen und Daten gewählt.\\
+Des Weiteren wurde die Oberfläche, und somit das gesamte System mit der Erwartung der gewünschten Ergebnisse manuell getestet und abgeglichen.
+\\
+Manuelle Testfälle dokumentieren und beschreiben
 Unit tests?
 How to test external api?
 Aspects of an API: speed? maybe Beständigkeit in der Speed?

@@ -43,4 +43,59 @@ Monteiro, J\BHBI L.%
   \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
+\bibitem [\protect \citeauthoryear {%
+Ottinger%
+}{%
+Ottinger%
+}{%
+{\protect \APACyear {2008}}%
+}]{%
+app-server}
+\APACinsertmetastar {%
+app-server}%
+\begin{APACrefauthors}%
+Ottinger, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+\APACrefbtitle {{What is an App Server?}} {{What is an App Server?}}
+\newblock
+\begin{APACrefURL}
+  \url{https://www.theserverside.com/news/1363671/What-is-an-App-Server}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {{Payara Server vs GlassFish}}}{%
+\APACcitebtitle {{Payara Server vs GlassFish}}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+payara-vs-glassfish}
+\APACinsertmetastar {%
+payara-vs-glassfish}%
+\APACrefbtitle {{Payara Server vs GlassFish}.} {{Payara Server vs GlassFish}.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL} \url{http://www.payara.org/payara-server-vs-glassfish}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {{React}}}{%
+\APACcitebtitle {{React}}}{%
+{\protect \APACyear {2020}}%
+}]{%
+react}
+\APACinsertmetastar {%
+react}%
+\APACrefbtitle {{React}.} {{React}.}
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://reactjs.org/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
 \end{thebibliography}
