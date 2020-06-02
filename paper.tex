@@ -251,25 +251,26 @@ Außerdem gibt es Testfälle für das Frontend, um die Umsetzung der Anwendung m
 	\captionof{figure}[Testfälle des Frontends]{Tabelle für die Testfälle des Frontends}
 	\label{fig:ui-tests}
 \end{center}
+\newpage
 % Ende
-\section{Zusammenfassung}
+\section{Fazit}
+Zunächst wird hier in einem Ausblick auf Möglichkeiten zur Verbesserung der Anwendung eingegangen, denn Software-Entwicklung ist ein niemals abgeschlossener Vorgang. Danach werden bekannte Probleme und Einschränkungen aufgelistet, die noch nicht gelöst werden konnten, jedoch wird ein Lösungsansatz zum weiteren Vorgehen aufgeführt. Alle Probleme sind in GitHub Issues festgehalten, sodass sie nicht in Vergessenheit geraten können. Zum Abschluss wird das gesamte Projekt noch einmal zusammengefasst.
 \subsection{Ausblick}
--> mehr Schnittstellen anbinden (ist schon bereit dafür)
--> jedoch nicht async
--> Monitor speed of my requests!!
--> How to test external api?
--> Aspects of an API: speed? maybe Beständigkeit in der Speed?
--> GraphQL ?
+Um die Funktion der Anwendung zu erweitern könnte man zum Beispiel weitere externe Schnittstellen anbinden, um eventuell billigere Flüge als die von Kiwi.com zu finden. Dazu wurden die betroffenen Klassen des Java-Backends schon so abstrakt geschrieben, sodass dies mit angemessenen Aufwand umsetzbar ist.\\
+Dabei ist jedoch anzumerken, dass diese externen Aufrufe bist jetzt nicht asynchron erfolgen. Das heißt dass gewartet wird, bis alle externen APIs geantwortet haben. Das hat zur Folge, dass die Antwortzeit äquivalent zur langsamsten externen API ist. Um das zu ändern, muss evaluiert werden, ob Rest-Calls asynchron beantwortet werden können.\\
+Außerdem kann die Geschwindigkeit der Aufrufe dokumentiert werden. Damit kann entschieden werden, ob bestimmte externe APIs zu langsam sind und damit wieder entfernt werden sollten. Für diese Art von Monitoring gibt es bereits Lösungen wie \href{https://prometheus.io/}{\textit{Prometheus}} oder die eingebaute Funktion von Eclipse Microprofile mithilfe sogenannter \textit{Metrics}.\\
+Des Weiteren kann auch ein Entfernungsfilter für den Zielflughafen auf die selbe Art wie für den Startflughafen hinzugefügt werden. Dazu müsste das Backend und die Oberfläche angepasst werden. Da dies jedoch nicht im Fokus der Aufgabe stand, sei dies hier jedoch nur als Idee anzumerken.\\
+Bei der Entwicklung der Anwendung fiel außerdem auf, dass es neben der Rest-Schnittstelle von Kiwi.com eine äquivalente GraphQL-Schnittstelle gibt. Das könnte bedeuten, dass die Rest-Schnittstelle veraltet ist und deshalb bestimmte Probleme auftreten (siehe \ref{sec:mixed-classes}). In diesem Fall wäre es ratsam, auf die GraphQL-Schnittstelle umzusteigen.\newline\cite{kiwi-tequila}
 \subsection{Bekannte Probleme}
-In diesem Kapitel werden bekannte Einschränkungen und Fehler der Anwendung aufgelistet, welche nicht gelöst werden konnten, jedoch wird ein Lösungsansatz zum weiteren Vorgehen aufgeführt. Alle Probleme sind in GitHub Issues festgehalten, sodass sie nicht in Vergessenheit geraten können.
 \subsubsection{AirportsFinder}
 Die externe Schnittstelle \href{https://rapidapi.com/cometari/api/airportsfinder}{AirportsFinder} zur Suche von Flughäfen in einem bestimmten Radius scheint eine Priorisierung der Flughäfen oder eine Einschränkung der Ergebnismenge vorzunehmen. So kann man zum Beispiel den Flughafen 'Leipzig/Halle LEJ' von Berlin aus mit einem Radius von 150km finden, jedoch nicht von München mit einem Radius von 360km. Dies hat zur Folge, dass für manche Flüge nicht der absolut günstigste Flug gefunden werden kann. Deshalb muss in Zukunft eine andere externe Schnittstelle zum Suchen von Flughäfen in einem gegebenen Radius gefunden werden.
-\subsubsection{Suche mit gemischten Klassen}
+\subsubsection{Suche mit gemischten Klassen}\label{sec:mixed-classes}
 Die externe API für die Flugsuche bietet die Möglichkeit, mit dem Parameter \texttt{mix\_with\_cabins} über mehrere Klassen zu suchen, wenn keine Flüge in der angegebenen Klasse gefunden werden können. Diese Funktion ist bei der API von Kiwi.com nicht gut dokumentiert oder fehlerhaft umgesetzt. Zur Lösung für dieses Problem könnten weitere Anfragen mit anderen Klassen abgeschickt werden, wenn die gegebene Klasse keine Ergebnisse liefert.
 \subsubsection{Deployment des Backend}
 Es wurde versucht die Java-Anwendung auf \textit{Heroku} zu hosten, damit sie jederzeit im Internet genutzt werden kann. Dies war aber selbst nach vielen Tagen nicht nachvollziehbar, also wurde dieser Ansatz verworfen. Als Zwischenlösung könnte die Anwendung auf einem Linux-Server bereitgestellt werden. Dies sollte automatisch mit jeder Änderung im GitHub Repository erfolgen, wie es mit \textit{Heroku} versucht wurde.
 \subsubsection{Sortieren/Filtern der Suchergebnisse}
 Das Sortieren oder Filtern der Suchergebnisse - zum Beispiel nach Abflughafen oder Airline - stellte sich komplizierter als gedacht heraus. Leider konnte dazu kein Experte in React.js oder TypeScript gefunden werden. Wenn sich einer finden lässt, ist dieses Problem in angemessener Zeit zu lösen.
+\subsection{Zusammenfassung}
 % Literaturverzeichnis
 \newpage
 % set interlinepenalty to not split entries on page break
