@@ -118,6 +118,8 @@ Docker ist eine quelloffene Software zur Isolierung von Anwendungen in sogenannt
 Ein \textit{Container} ist die aktive Instanz eines Docker images und kann beliebig konfiguriert und bearbeitet werden. Wird ein Container beendet und ein neuer nach der Vorlage desselben Images gestartet, gehen alle Änderungen verloren. Dies lässt sich durch die Verwendung von \textit{Volumes} verhindern, welche die Konfiguration eines Containers persistieren.
 \subsection{React.js}
 React.js ist eine JavaScript Bibliothek um Webanwendungen zu entwickeln. Damit lassen sich einfach interaktive Oberflächen erstellen, indem man \textit{Views} für jede Komponente der Anwendung definiert. Dabei rendert React nur eine Komponente neu, wenn sich dessen Daten ändern. Dadurch wird die Anwendung effizient und der Code wird übersichtlicher und einfacher zu debuggen. Außerdem lassen sich Komponenten abstrakt definieren und mehrfach verwenden, was der gesamten Anwendung ein einheitliches Aussehen gibt. \cite{react}
+\subsection{Postman}\label{sec:postman}
+Postman ist ein Programm um HTTP-Schnittstellen aufzurufen. Die einzelnen Aufrufe können in sogenannten \textit{Collections} in Json-Format gespeichert werden, sodass sie in einer anderen Postman-Instanz importiert und wiederverwendet werden können. Durch diese beispielhaften Aufrufe ist es einfach, den Aufbau einer Schnittstelle zu verstehen.
 \newpage
 % Hauptteil
 \section{Entwurf}
@@ -223,18 +225,40 @@ Für die Flughafenobjekte in \texttt{source} und \texttt{target} ist nur der ein
 \section{Testing}
 Das Testen der Anwendung war ein wichtiger Teil für den Erfolg des Projekts. Deshalb wurden nicht nur alle Software-Komponenten mit Unit-Tests abgedeckt, sondern auch Integrations-Tests geschrieben. All diese Tests werden programmatisch ausgeführt und werden von einer \acrshort{ci} in GitHub automatisch bei jedem \textit{push} ausgeführt. Ein \textit{merge} in den Master ist nur möglich wenn alle Tests erfolgreich ausgeführt wurden. Für alle Testfälle wurden realitätsnahe Bedingungen und Daten gewählt.\\
 Des Weiteren wurde die Oberfläche, und somit das gesamte System mit der Erwartung der gewünschten Ergebnisse manuell getestet und abgeglichen.
-\\
-Manuelle Testfälle dokumentieren und beschreiben
-Unit tests?
-How to test external api?
-Aspects of an API: speed? maybe Beständigkeit in der Speed?
--> Postman
+\subsection{Automatische Tests}
+Das Java-Backend wurde mit Unit- und Integrationstests getestet, welche mit dem Testframework JUnit 5 geschrieben wurden. Dadurch fallen neue Bugs schon direkt bei der Entwicklung auf. Des Weiteren wird die Qualität des Codes mit \textit{Sonar} überprüft. Dazu zählen unter anderem Aspekte wie Bugs, Schwachstellen (\textit{Vulnerabilities}) oder Verletzung von Java-Richtlinien (sogenannte \textit{Code Smells}). Um Schwachstellen in externen Bibliotheken der Anwendung aufzudecken wird \textit{OWASP} verwendet.\\
+All diese Tests werden automatisch in der \acrfull{ci} von \textit{CircleCI} ausgeführt, wenn die Änderungen in das GitHub Repository gepusht werden. Pull Requests sind so konfiguriert, dass sie nur nach erfolgreichem Durchlauf der Tests akzeptiert werden können. Außerdem wird die Testabdeckung bei jedem Durchlauf dokumentiert und überprüft und darf niemals abnehmen. Die Konfiguration dieser Überprüfungen kann dem Dokument \href{https://github.com/featherkraken/featherkraken/blob/master/.circleci/config.yml}{\texttt{featherkraken/.circleci/config.yml}} entnommen werden.\\
+Die Komponenten des React-Frontends wurden aus Zeitgründen nicht mit automatischen Tests abgedeckt, jedoch wird die Kompilierbarkeit der Anwendung in \textit{CircleCI} überprüft und der Stand des \textit{master}-Branches in GitHub Pages automatisch veröffentlicht. Dies kann in \href{https://github.com/featherkraken/featherkraken-ui/blob/master/.circleci/config.yml}{\texttt{featherkraken-ui/.circleci/config.yml}} eingesehen werden.
+\subsection{Manuelle Tests}
+Zusätzlich zu den automatischen Tests gibt es eine \textit{Postman-Collection}\textsuperscript{\ref{sec:postman}} für die Rest-Schnittstellen des Backends. Diese kann unter \href{https://github.com/featherkraken/featherkraken/blob/master/src/test/postman/Collection.json}{\texttt{src/test/postman/Collection.json}} gefunden und in \textit{Postman} importiert werden.\\
+Außerdem gibt es Testfälle für das Frontend, um die Umsetzung der Anwendung mit den tatsächlichen Anforderungen vergleichen zu können:
+\begin{center}
+	\captionsetup{type=figure}
+	\resizebox{\textwidth}{!}
+	{\begin{tabular}{ l | l | l | l }
+			\textbf{Abflughafen} & \textbf{Zielflughafen} & \textbf{Klasse} & \textbf{Erwartung} \\
+			\hline
+			Inverness INV & John F. Kennedy International JFK & First class &  Umstieg mit Economy Klasse wird gefunden\\
+			\hline
+			Heathrow LHR & John F. Kennedy International JFK & First class &  Flüge werden gefunden\\
+			\hline
+			Munich MUC (+600km) & Kyiv International Airport (Zhuliany) IEV & Economy &  Flug von LEJ gefunden\\
+			\hline
+			Stockholm Arlanda ARN & Dubai International DXB & First class &  Umstieg mit Business Klasse wird gefunden\\
+			\hline
+			Sofia SOF & San Francisco International & Business &  Umstieg mit Economy wird gefunden\\
+	\end{tabular}}
+	\captionof{figure}[Testfälle des Frontends]{Tabelle für die Testfälle des Frontends}
+	\label{fig:ui-tests}
+\end{center}
 % Ende
 \section{Zusammenfassung}
 \subsection{Ausblick}
 -> mehr Schnittstellen anbinden (ist schon bereit dafür)
 -> jedoch nicht async
 -> Monitor speed of my requests!!
+-> How to test external api?
+-> Aspects of an API: speed? maybe Beständigkeit in der Speed?
 % Literaturverzeichnis
 \newpage
 % set interlinepenalty to not split entries on page break
