@@ -22,6 +22,9 @@
 \usepackage{fancyvrb}
 \usepackage{graphicx}
 \usepackage{apacite}
+\usepackage{xspace}
+\let\OldTexttrademark\texttrademark
+\renewcommand{\texttrademark}{\OldTexttrademark\xspace}%
 \usepackage[acronym]{glossaries}
 \makeglossaries
 \newacronym{erm}{ERM}{Entity Relationship Model}
@@ -116,10 +119,12 @@ Docker ist eine quelloffene Software zur Isolierung von Anwendungen in sogenannt
 \textit{Images} sind die Vorlage zur Erstellung neuer Container. Sie können aus mehreren Schichten von anderen Images bestehen und so können komplexe Systeme leichtgewichtig und portabel erstellt werden.
 \subsubsection{Container}
 Ein \textit{Container} ist die aktive Instanz eines Docker images und kann beliebig konfiguriert und bearbeitet werden. Wird ein Container beendet und ein neuer nach der Vorlage desselben Images gestartet, gehen alle Änderungen verloren. Dies lässt sich durch die Verwendung von \textit{Volumes} verhindern, welche die Konfiguration eines Containers persistieren.
-\subsection{React.js}
-React.js ist eine JavaScript Bibliothek um Webanwendungen zu entwickeln. Damit lassen sich einfach interaktive Oberflächen erstellen, indem man \textit{Views} für jede Komponente der Anwendung definiert. Dabei rendert React nur eine Komponente neu, wenn sich dessen Daten ändern. Dadurch wird die Anwendung effizient und der Code wird übersichtlicher und einfacher zu debuggen. Außerdem lassen sich Komponenten abstrakt definieren und mehrfach verwenden, was der gesamten Anwendung ein einheitliches Aussehen gibt. \cite{react}
 \subsection{Postman}\label{sec:postman}
 Postman ist ein Programm um HTTP-Schnittstellen aufzurufen. Die einzelnen Aufrufe können in sogenannten \textit{Collections} in Json-Format gespeichert werden, sodass sie in einer anderen Postman-Instanz importiert und wiederverwendet werden können. Durch diese beispielhaften Aufrufe ist es einfach, den Aufbau einer Schnittstelle zu verstehen.
+\subsection{React.js}\label{sec:react}
+React.js ist eine JavaScript Bibliothek um Webanwendungen zu entwickeln. Damit lassen sich einfach interaktive Oberflächen erstellen, indem man \textit{Views} für jede Komponente der Anwendung definiert. Dabei rendert React nur eine Komponente neu, wenn sich dessen Daten ändern. Dadurch wird die Anwendung effizient und der Code wird übersichtlicher und einfacher zu debuggen. Außerdem lassen sich Komponenten abstrakt definieren und mehrfach verwenden, was der gesamten Anwendung ein einheitliches Aussehen gibt. \cite{react}
+\subsection{TypeScript}\label{sec:typescript}
+TypeScript ist eine auf JavaScript basierende Programmiersprache und erweitert diese um viele Funktionen aus der objektorientierten Programmierung. Der geschriebene Code wird zu JavaScript kompiliert, dadurch sind auch Bibliotheken und Syntax von JavaScript einsetzbar. Ein großer Vorteil gegenüber JavaScript ist, dass TypeScript strikter sein kann und somit logischer und verständlicher Code entsteht. \cite{ts-vs-js}
 \newpage
 % Hauptteil
 \section{Entwurf}
@@ -179,6 +184,7 @@ Für die Komponenten war das Thema Plattformunabhängigkeit sehr wichtig und aus
 Als Bedingung für die Web-Oberfläche ist es unabdingbar, dass die Anwendung intuitiv bedienbar ist und auf allen Endgeräten gut dargestellt werden kann. Für diesen Zweck kommen eigentlich nur drei Frameworks in Frage: Angular, React.js und Vue.js. Dabei wurde React gewählt, welches sich besser als Vue.js und Angular für kleine Anwendungen eignet, wie es in diesem Fall zutrifft. Bei dem hier vorliegenden Fall wird es sogar eine sogenannte Single-Page-Webapplication, das heißt die gesamte Funktion kann auf einer Seite dargestellt werden.
 % Umsetzung
 \section{Implementierung}
+In diesem Kapitel werden die Umsetzung der Anwendung beschrieben, wobei die Anwendung in eine Serveranwendung (Backend) und eine Webanwendung (Frontend) unterteilt wurde.
 \subsection{Backend}
 Das Backend der Anwendung dient als Proxy zwischen Web-Frontend und externer API und wurde in Java geschrieben. Dabei wurde Jakarta EE\textsuperscript{\ref{sec:jakarta-ee}} und Eclipse Microprofile\textsuperscript{\ref{sec:microprofile}} verwendet, um eine Rest-Schnittstelle für die Suche von Flügen zu bieten. Durch das Verwenden von Microprofile lässt sich die Anwendung einfach in einem Payara Application Server starten. Dieser wurde mithilfe eines Docker Images umgesetzt und dadurch lässt er sich einfach in einer Cloud Umgebung oder klassisch auf einem Windows- oder Linux-Server deployen.
 \begin{center}
@@ -186,7 +192,7 @@ Das Backend der Anwendung dient als Proxy zwischen Web-Frontend und externer API
 	\includegraphics[height=5cm]{images/backend-structure}
 	\captionof{figure}{Aufbau des Backends}
 \end{center}
-\subsubsection[Flughafensuche]{Flughafensuche: GET /airports}
+\subsubsection[Flughafensuche]{Flughafensuche: GET /airports}\label{sec:airport-search}
 Um bestimmte Flughäfen mit einem Teil des Namens des Flughafens oder der Stadt suchen zu können, gibt es den Endpoint \texttt{/airports} der mit einem GET-Request erreicht werden kann. Die Eingabe wird über den Query-Parameter 'query' in der URL des Requests übergeben. Ein beispielhafter Request für die Suche von Flughäfen in Amsterdam kann zum Beispiel folgendermaßen aufgebaut sein:\\
 \begin{center}
 	\texttt{GET www.featherkraken-example.com/airports?query=Ams}
@@ -222,6 +228,20 @@ Die Kernfunktion der Anwendung steckt hinter dem Endpoint \texttt{/flights}, wel
 }
 \end{Verbatim}
 Für die Flughafenobjekte in \texttt{source} und \texttt{target} ist nur der eindeutige \acrlong{iata} in \texttt{source.name} entscheidend. Der Radius wird in Kilometern angegeben. In diesem Beispiel werden Hin- und Rückflüge zwischen Frankfurt und Los Angeles in der Klasse 'Economy' gesucht. Außerdem ist zu erkennen, wie ein variables Abflugdatum (11.11. - 13.11.2020) angegeben werden kann.
+\newpage
+\subsection{Frontend}
+Das Frontend ist eine Web-Anwendung, die mit dem Framework React.js\textsuperscript{\ref{sec:react}} in TypeScript\textsuperscript{\ref{sec:typescript}} geschrieben wurde. Für diesen Anwendungsfall genügte eine Single-Page-Application, das heißt, dass die gesamte Funktion auf einer Webseite dargestellt werden kann.\\
+Durch den Einsatz von der Bibliothek \texttt{react-bootstrap} lassen sich Komponenten im Material Design einfach zusammenbauen. Material Design wurde von Google\texttrademark entwickelt und ist eine Design-Richtlinie für Oberflächen. Der Vorteil ist, dass man dabei kein Grafikdesigner sein muss, um eine ansprechende Webanwendung zu bauen.
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[width=\textwidth]{images/frontend-screenshot}
+	\captionof{figure}{Screenshot des Frontend}
+	\label{fig:frontend}
+\end{center}
+Wie in Abbildung \ref{fig:frontend} zu sehen ist, kann bei der Suche nach Art des Fluges (Hinflug oder Hin- und Rückflug), Anzahl Passagiere, Klasse (Economy, Premium Economy, Business, First class), Anzahl der Zwischenstopps (Non-Stop, 1, 2 oder mehr) und Anzahl der Suchergebnisse gefiltert werden.\\
+In den Eingabefeldern darunter können Suchparameter wie Startflughafen, Entfernungsfilter, Zielflughafen und An- und Abreisedatum eingegeben werden. Die Eingabefelder für Start- und Zielflughafen benutzen den Service zur Flughafensuche\textsuperscript{\ref{sec:airport-search}} um Flughäfen mit dem eingegebenen Wortteil in Echtzeit zu suchen.\\
+Liefert das Backend nach Klicken des Suchbuttons Suchergebnisse zurück, lassen sich diese nach bestimmten Airlines filtern, wie an dem Dropdown in Abbildung \ref{fig:frontend} zu sehen ist.\\
+Die Suchergebnisse sind in einer Liste aufgeführt und unterteilen sich jeweils in Hin- und Rückflug, wenn nicht nur nach Hinflug gesucht wurde. Ein Logo informiert den Benutzer über die Airline jeden Flugs.
 \section{Testing}
 Das Testen der Anwendung war ein wichtiger Teil für den Erfolg des Projekts. Deshalb wurden nicht nur alle Software-Komponenten mit Unit-Tests abgedeckt, sondern auch Integrations-Tests geschrieben. All diese Tests werden programmatisch ausgeführt und werden von einer \acrshort{ci} in GitHub automatisch bei jedem \textit{push} ausgeführt. Ein \textit{merge} in den Master ist nur möglich wenn alle Tests erfolgreich ausgeführt wurden. Für alle Testfälle wurden realitätsnahe Bedingungen und Daten gewählt.\\
 Des Weiteren wurde die Oberfläche, und somit das gesamte System mit der Erwartung der gewünschten Ergebnisse manuell getestet und abgeglichen.
