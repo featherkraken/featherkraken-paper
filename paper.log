@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.9)  3 JUN 2020 06:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.9)  3 JUN 2020 07:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -321,6 +321,9 @@ Package: apacite 2013/07/21 v6.03 APA citation
 \bibitemsep=\skip56
 \biblabelsep=\skip57
 )
+(/usr/local/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
 (/usr/local/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2020/02/13 v4.45 (NLCT)
 
@@ -561,11 +564,11 @@ Package: glossary-tree 2020/02/13 v4.45 (NLCT)
 \glo@main@file=\write5
 \openout5 = `paper.glo'.
 
-Package glossaries Info: Writing glossary file paper.glo on input line 26.
+Package glossaries Info: Writing glossary file paper.glo on input line 29.
 \glo@acronym@file=\write6
 \openout6 = `paper.acn'.
 
-Package glossaries Info: Writing glossary file paper.acn on input line 26.
+Package glossaries Info: Writing glossary file paper.acn on input line 29.
 
 (/usr/local/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
@@ -575,23 +578,23 @@ File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 33
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 36
 .
  (/usr/local/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
@@ -674,7 +677,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box57
-Package hyperref Info: Link coloring ON on input line 33.
+Package hyperref Info: Link coloring ON on input line 36.
 
 (/usr/local/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -687,9 +690,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count311
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
+LaTeX Info: Redefining \nameref on input line 36.
 
 (./paper.out) (./paper.out)
 \@outlinefile=\write7
@@ -713,20 +716,20 @@ File: german.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 142.
 LaTeX Info: Redefining \BHBI on input line 143.
 ))
-<images/intension.png, id=149, 480.79625pt x 112.42pt>
+<images/intension.png, id=157, 480.79625pt x 112.42pt>
 File: images/intension.png Graphic file (type png)
 <use images/intension.png>
-Package pdftex.def Info: images/intension.png  used on input line 37.
+Package pdftex.def Info: images/intension.png  used on input line 40.
 (pdftex.def)             Requested size: 170.71652pt x 39.91708pt.
-<images/dhbw.png, id=152, 2007.5pt x 838.13126pt>
+<images/dhbw.png, id=160, 2007.5pt x 838.13126pt>
 File: images/dhbw.png Graphic file (type png)
 <use images/dhbw.png>
-Package pdftex.def Info: images/dhbw.png  used on input line 37.
+Package pdftex.def Info: images/dhbw.png  used on input line 40.
 (pdftex.def)             Requested size: 113.81102pt x 47.51053pt.
-<images/featherkraken.png, id=153, 513.92pt x 513.92pt>
+<images/featherkraken.png, id=161, 513.92pt x 513.92pt>
 File: images/featherkraken.png Graphic file (type png)
 <use images/featherkraken.png>
-Package pdftex.def Info: images/featherkraken.png  used on input line 42.
+Package pdftex.def Info: images/featherkraken.png  used on input line 45.
 (pdftex.def)             Requested size: 113.81102pt x 113.80771pt.
  [1
 
@@ -738,17 +741,17 @@ t4): destination with the same identifier (name{page.}) has been already used,
 duplicate ignored
 <to be read again> 
                    \relax 
-l.60 \newpage
+l.63 \newpage
               [2]pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.64 \newpage
+l.67 \newpage
               [3] (./paper.tocpdfTeX warning (ext4): destination with the same 
 identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.34 ...ment des Backend}{14}{subsubsection.6.2.3}
+l.34 ...1}AirportsFinder}{15}{subsubsection.6.2.1}
                                                   % [4])
 \tf@toc=\write8
 \openout8 = `paper.toc'.
@@ -757,7 +760,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.66 \newpage
+l.69 \newpage
               [5] (./paper.lof)
 \tf@lof=\write9
 \openout9 = `paper.lof'.
@@ -766,134 +769,129 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.68 \newpage
+l.71 \newpage
               [6] (./paper.acr) (./paper.gls)pdfTeX warning (ext4): destination
  with the same identifier (name{page.}) has been already used, duplicate ignore
 d
 <to be read again> 
                    \relax 
-l.71 \newpage
+l.74 \newpage
               [7]
-Overfull \hbox (2.63658pt too wide) in paragraph at lines 81--84
+Overfull \hbox (2.63658pt too wide) in paragraph at lines 84--87
 \T1/phv/m/n/12 heiÿt die Un-ter-schei-dung ob man nur einen Hin-flug oder Hin- 
 und Rück-flug buchen
  []
 
 
-Overfull \hbox (40.6539pt too wide) in paragraph at lines 81--84
+Overfull \hbox (40.6539pt too wide) in paragraph at lines 84--87
 \T1/phv/m/n/12 (Econ-o-my, Busi-ness, First Class) soll auch die Wahl der Air-l
 ine oder Al-lianz eingeschränkt
  []
 
 
-Overfull \hbox (1.18394pt too wide) in paragraph at lines 81--84
+Overfull \hbox (1.18394pt too wide) in paragraph at lines 84--87
 \T1/phv/m/n/12 Zusätzlich soll ein Ent-fer-nungs-fil-ter um einen möglichen Abf
 lughafen bere-it-gestellt
  []
 
 [1]
-Overfull \hbox (0.70381pt too wide) in paragraph at lines 86--87
+Overfull \hbox (0.70381pt too wide) in paragraph at lines 89--90
 \T1/phv/m/n/12 In diesem Kapi-tel wer-den tech-nis-che Grund-la-gen aufge-führt
  und er-läutert, welche
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
 
-Overfull \hbox (2.30078pt too wide) in paragraph at lines 90--91
+Overfull \hbox (2.30078pt too wide) in paragraph at lines 93--94
 \T1/phv/m/n/12 sitzen, wobei kom-plexe At-tribute als Beziehun-gen zu an-deren 
 Ob-jek-ten dargestellt
  []
 
-<images/ERM-Entity.png, id=273, 3016.26875pt x 612.2875pt>
+<images/ERM-Entity.png, id=287, 3016.26875pt x 612.2875pt>
 File: images/ERM-Entity.png Graphic file (type png)
 <use images/ERM-Entity.png>
-Package pdftex.def Info: images/ERM-Entity.png  used on input line 93.
+Package pdftex.def Info: images/ERM-Entity.png  used on input line 96.
 (pdftex.def)             Requested size: 426.79135pt x 86.63525pt.
-<images/ERM-Attributes.png, id=275, 1309.89375pt x 205.76875pt>
+<images/ERM-Attributes.png, id=289, 1309.89375pt x 205.76875pt>
 File: images/ERM-Attributes.png Graphic file (type png)
 <use images/ERM-Attributes.png>
-Package pdftex.def Info: images/ERM-Attributes.png  used on input line 101.
+Package pdftex.def Info: images/ERM-Attributes.png  used on input line 104.
 (pdftex.def)             Requested size: 284.52756pt x 44.69467pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 106.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 109.
 
-Overfull \hbox (7.43582pt too wide) in paragraph at lines 106--107
+Overfull \hbox (7.43582pt too wide) in paragraph at lines 109--110
 \T1/phv/m/n/12 (Stan-dard Edi-tion) er-weit-ert und er-möglicht damit das En-tw
 ick-eln von mehrschichti-
  []
 
 [2 <./images/ERM-Entity.png> <./images/ERM-Attributes.png>]
-Overfull \hbox (2.32858pt too wide) in paragraph at lines 116--117
+Overfull \hbox (2.32858pt too wide) in paragraph at lines 119--120
 \T1/phv/m/sl/12 Images \T1/phv/m/n/12 sind die Vor-lage zur Er-stel-lung neuer 
 Con-tain-er. Sie kön-nen aus mehreren
  []
 
 [3]
-Overfull \hbox (0.44508pt too wide) in paragraph at lines 120--121
+Overfull \hbox (0.44508pt too wide) in paragraph at lines 125--126
 \T1/phv/m/n/12 React.js ist eine JavaScript Bib-lio-thek um We-ban-wen-dun-gen 
 zu en-twick-eln. Damit
  []
 
 [4]
-Overfull \hbox (1.60484pt too wide) in paragraph at lines 127--128
+Overfull \hbox (1.60484pt too wide) in paragraph at lines 132--133
 \T1/phv/m/n/12 Um Flug-dat-en zu er-hal-ten muss eine ex-terne Schnittstelle be
 -nutzt wer-den, welche
  []
 
 [5]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-59.
+64.
  (/usr/local/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Overfull \hbox (7.33968pt too wide) in paragraph at lines 159--160
+Overfull \hbox (7.33968pt too wide) in paragraph at lines 164--165
 \T1/phv/m/n/12 Das [][][]En-ti-ty Re-la-tion-ship Mod-el[][] für das Daten-mod-
 ell wurde hi-er aufgeteilt in Suchan-
  []
 
-<images/datamodel-SearchRequest.png, id=323, 5189.3875pt x 1470.49374pt>
+<images/datamodel-SearchRequest.png, id=340, 5189.3875pt x 1470.49374pt>
 File: images/datamodel-SearchRequest.png Graphic file (type png)
 <use images/datamodel-SearchRequest.png>
 Package pdftex.def Info: images/datamodel-SearchRequest.png  used on input line
- 164.
+ 169.
 (pdftex.def)             Requested size: 426.79135pt x 120.91783pt.
-<images/datamodel-SearchResult.png, id=326, 4521.89375pt x 2644.88126pt>
+<images/datamodel-SearchResult.png, id=343, 4521.89375pt x 2644.88126pt>
 File: images/datamodel-SearchResult.png Graphic file (type png)
 <use images/datamodel-SearchResult.png>
 Package pdftex.def Info: images/datamodel-SearchResult.png  used on input line 
-172.
+177.
 (pdftex.def)             Requested size: 426.79135pt x 249.61166pt.
 
 Underfull \vbox (badness 4569) has occurred while \output is active []
 
  [6 <./images/datamodel-SearchRequest.png>] [7 <./images/datamodel-SearchResult
 .png>]
-Overfull \hbox (0.12402pt too wide) in paragraph at lines 183--184
+Overfull \hbox (0.12402pt too wide) in paragraph at lines 189--190
 \T1/phv/m/n/12 tern-er API und wurde in Ja-va geschrieben. Dabei wurde Jakar-ta
  EE$[]$ und Eclipse
  []
 
-<images/backend-structure.png, id=341, 607.26875pt x 958.58125pt>
+<images/backend-structure.png, id=358, 607.26875pt x 958.58125pt>
 File: images/backend-structure.png Graphic file (type png)
 <use images/backend-structure.png>
-Package pdftex.def Info: images/backend-structure.png  used on input line 186.
+Package pdftex.def Info: images/backend-structure.png  used on input line 192.
 (pdftex.def)             Requested size: 90.1227pt x 142.26378pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1092) has occurred while \output is active []
 
  [8]
-Overfull \hbox (8.12468pt too wide) in paragraph at lines 190--191
+Overfull \hbox (8.12468pt too wide) in paragraph at lines 196--197
 \T1/phv/m/n/12 Request er-re-icht wer-den kann. Die Eingabe wird über den Query
 -Parameter 'query'
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
-
  []
 
 
@@ -901,39 +899,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
-[9 <./images/backend-structure.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+
+ []
+
+[9 <./images/backend-structure.png>] [10]
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 2
+34.
+
+(/usr/local/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 17.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 20.
+
+
+LaTeX Warning: Font shape declaration has incorrect series value `mc'.
+               It should not contain an `m'! Please correct it.
+               Found on input line 34.
+
+)
+Overfull \hbox (3.61667pt too wide) in paragraph at lines 233--235
+\T1/phv/m/n/12 TypeScript$[]$ geschrieben wurde. Für diesen An-wen-dungs-fall g
+enügte eine Single-
+ []
+
+
+Overfull \hbox (23.32518pt too wide) in paragraph at lines 233--235
+\T1/phv/m/n/12 Page-Application, das heiÿt, dass die gesamte Funk-tion auf ein-
+er Web-seite dargestellt
+ []
+
+<images/frontend-screenshot.png, id=377, 2438.10875pt x 1304.875pt>
+File: images/frontend-screenshot.png Graphic file (type png)
+<use images/frontend-screenshot.png>
+Package pdftex.def Info: images/frontend-screenshot.png  used on input line 237
+.
+(pdftex.def)             Requested size: 426.79135pt x 228.41628pt.
+
+Overfull \hbox (31.39146pt too wide) in paragraph at lines 241--245
+\T1/phv/m/n/12 Eingabefelder für Start- und Zielflughafen be-nutzen den Ser-vic
+e zur Flughafensuche$[]$
+ []
+
+
+Overfull \hbox (4.30553pt too wide) in paragraph at lines 241--245
+\T1/phv/m/n/12 Liefert das Back-end nach Klick-en des Such-but-tons Suchergeb-n
+isse zurück, lassen
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
-Overfull \hbox (45.37656pt too wide) in paragraph at lines 229--232
+ [11 <./images/frontend-screenshot.png>]
+Overfull \hbox (45.37656pt too wide) in paragraph at lines 249--252
 \T1/phv/m/n/12 ra-tion dieser Über-prü-fun-gen kann dem Doku-ment [][]\T1/cmtt/
 m/n/12 featherkraken/.circleci/config.yml[][]
  []
 
 
-Overfull \hbox (44.80644pt too wide) in paragraph at lines 233--235
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+Overfull \hbox (44.80644pt too wide) in paragraph at lines 253--255
 \T1/phv/m/n/12 Rest-Schnittstellen des Back-ends. Diese kann unter [][]\T1/cmtt
 /m/n/12 src/test/postman/Collection.json[][]
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]
-[12]
-Overfull \hbox (7.32893pt too wide) in paragraph at lines 257--258
+[13]
+Overfull \hbox (7.32893pt too wide) in paragraph at lines 277--278
 \T1/phv/m/n/12 wen-dung einge-gan-gen, denn Software-Entwicklung ist ein niemal
 s abgeschlossen-
  []
 
 
-Overfull \hbox (1.06435pt too wide) in paragraph at lines 259--264
+Overfull \hbox (1.06435pt too wide) in paragraph at lines 279--284
 \T1/phv/m/n/12 nte be-deuten, dass die Rest-Schnittstelle ve-r-al-tet ist und d
 e-shalb bes-timmte Prob-
  []
 
 
-Overfull \hbox (1.0998pt too wide) in paragraph at lines 266--267
+Overfull \hbox (1.0998pt too wide) in paragraph at lines 286--287
 \T1/phv/m/n/12 timmten Ra-dius scheint eine Pri-or-isierung der Flughäfen oder 
 eine Ein-schränkung
  []
@@ -941,36 +995,36 @@ eine Ein-schränkung
 
 Underfull \vbox (badness 2213) has occurred while \output is active []
 
- [13]
-[14] [15] (./paper.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 279.
- [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 279.
+ [14]
+[15] [16] (./paper.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 299.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 299.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 279.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 279.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 299.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 299.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 6ED2A581D846605DDE9FC32EA1260D62;2269.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 279.
+(rerunfilecheck)             Checksum: 63C8E5018410DB4CFD2FCC205B2501E6;2387.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 299.
  ) 
 Here is how much of TeX's memory you used:
- 16303 strings out of 482862
- 268376 string characters out of 5957990
- 607106 words of memory out of 5000000
- 31157 multiletter control sequences out of 15000+600000
- 558443 words of font info for 53 fonts, out of 8000000 for 9000
+ 16383 strings out of 482862
+ 269782 string characters out of 5957990
+ 607771 words of memory out of 5000000
+ 31225 multiletter control sequences out of 15000+600000
+ 558756 words of font info for 54 fonts, out of 8000000 for 9000
  42 hyphenation exceptions out of 8191
- 51i,8n,77p,1000b,628s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,8n,77p,1000b,629s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr
 /local/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/texmf
 -dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/texmf-dist/f
 onts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb></usr/local/texlive/texmf-dist/fonts/type1/urw/helvetic/
 uhvro8a.pfb>
-Output written on paper.pdf (23 pages, 842583 bytes).
+Output written on paper.pdf (24 pages, 1021791 bytes).
 PDF statistics:
- 444 PDF objects out of 1000 (max. 8388607)
- 393 compressed objects within 4 object streams
- 80 named destinations out of 1000 (max. 500000)
- 329 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 475 PDF objects out of 1000 (max. 8388607)
+ 420 compressed objects within 5 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 350 words of extra memory for PDF output out of 10000 (max. 10000000)
 

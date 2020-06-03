@@ -123,4 +123,29 @@ react}%
 \begin{APACrefURL} \url{https://reactjs.org/} \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
+\bibitem [\protect \citeauthoryear {%
+Technologies%
+}{%
+Technologies%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+ts-vs-js}
+\APACinsertmetastar {%
+ts-vs-js}%
+\begin{APACrefauthors}%
+Technologies, I\BPBI A\BPBI .%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {{JavaScript VS TypeScript: Which is better? (2020 Updated)}.}
+  {{JavaScript VS TypeScript: Which is better? (2020 Updated)}.}
+\newblock
+\begin{APACrefURL}
+  \url{https://medium.com/@infinijith/javascript-vs-typescript-which-is-better-2020-updated-871866a3c68c}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
 \end{thebibliography}
