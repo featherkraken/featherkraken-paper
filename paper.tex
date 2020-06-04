@@ -108,7 +108,25 @@ Attribute können dabei eindeutig, optional oder mehrwertig sein. Die Unterschei
 	\captionof{figure}[Verschiedene Arten von Attributen im \acrshort{erm}]{Attribute (v.l.): eindeutig, optional und mehrwertig}
 	\label{fig:erm-attributes}
 \end{center}
-\subsection{Jakarta EE}\label{sec:jakarta-ee}
+\subsection{Docker}
+Docker ist eine quelloffene Software zur Isolierung von Anwendungen in sogenannten Containern. Mit ihr können zum Beispiel Webserver oder Datenbanken schnell eingerichtet werden, ohne diese vorher aufsetzen zu müssen.
+\subsubsection{Image}
+\textit{Images} sind die Vorlage zur Erstellung neuer Container. Sie können aus mehreren Schichten von anderen Images bestehen und so können komplexe Systeme leichtgewichtig und portabel erstellt werden.
+\subsubsection{Container}
+Ein \textit{Container} ist die aktive Instanz eines Docker images und kann beliebig konfiguriert und bearbeitet werden. Wird ein Container beendet und ein neuer nach der Vorlage desselben Images gestartet, gehen alle Änderungen verloren. Dies lässt sich durch die Verwendung von \textit{Volumes} verhindern, welche die Konfiguration eines Containers persistieren.
+\subsection{Git}
+Git ist eine kostenlose Softwarelösung zur verteilten Versions-Verwaltung von Dateien und eignet sich ideal für Softwareprojekte. Git wurde 2005 von Linus Torvalds entwickelt, welcher als der Erfinder von Linux gilt. \cite{linus-torvalds}\\
+Versionen eines Projekts werden dabei in sogenannten \textit{commits} festgehalten. Außerdem gibt es \textit{branches} um verschiedene Entwicklungsstände zu repräsentieren. Dabei gibt es immer einen Branch mit der aktuell validen Version des Projekts (meistens '\textit{master'}). Dateiänderungen können zwischen verschiedenen Branches ausgetauscht werden, wobei hauptsächlich der Befehl \textit{merge} benutzt wird um Änderungen auf den \textit{master}-Branch zu erhalten.\\
+Das Projekt befindet sich in einem lokalen \textit{repository} auf dem Computer des Bearbeiters, aber kann auch mit einem Repository im Internet synchronisiert werden. Um Änderungen vom lokalen Repository in das Webrepository zu veröffentlichen wird der Befehl \textit{push} benutzt. Für den umgekehrten Fall (also Internet $\rightarrow$ Lokal) wird der Befehl \textit{pull} verwendet.
+\subsubsection{GitHub}
+Ein kostenloser Anbieter für ein Webrepository ist zum Beispiel \href{https://github.com/}{\textit{GitHub}}, welches dabei am bekanntesten ist. Neben einer Weboberfläche zum Verwalten der Branches bietet GitHub unter anderem Verwaltung von Zugriffsrechten, Aufgabenorganisation und eine eingebaute \acrshort{ci}.\\
+Um Änderungen zwischen Branches auszutauschen bietet GitHub sogenannte \textit{pull requests}. In diesen werden die Änderungen übersichtich dargestellt und ein akzeptieren des Pull Request hat einen \textit{merge} in den Ziel-Branch zur Folge.\\
+Die Aufgabenorganisation wird mithilfe von \textit{Issues} durchgeführt, welche sich zusammensetzen aus Titel, Beschreibung und Metadaten wie Bearbeitender, Label oder Bearbeitungsstatus. Der Bearbeitungsstatus der Issues lässt sich in einem \textit{Project}-Board (zum Beispiel Kanban/Scrum) organisieren.\\
+Des Weiteren bietet \textit{GitHub Pages} die Möglichkeit, kostenlos statische Web-Inhalte zu hosten. Dabei kann eine \acrshort{ci} benutzt werden um die Inhalte aus dem jeweiligen Projekt automatisch zu generieren und veröffentlichen.\\
+Auf GitHub befinden sich für diese Studienarbeit sowohl die \href{https://github.com/featherkraken}{Repositories} als auch das automatisierte \href{https://github.com/orgs/featherkraken/projects/1}{Project-Board} dazu. Außerdem wurde die aktuelle Version des \href{https://featherkraken.github.io/featherkraken-ui/}{Frontends} und dieses \href{https://featherkraken.github.io/featherkraken-paper/paper.pdf}{Dokuments} in GitHub Pages veröffentlicht.
+\subsection{CircleCI}
+Da die eingebaute \acrshort{ci} von GitHub nicht zufriedenstellend mit Docker zusammen funktioniert, wurde die externe Lösung \href{https://circleci.com/}{CircleCI} verwendet. Dabei lassen sich Docker-Container zum Ausführen von Befehlen verwenden um komplexere Szenarien umsetzen zu können. Die gute Integration von GitHub und CircleCI hat zur Folge, dass Tests und andere Überprüfungen automatisch mit jedem \textit{push} ausgelöst werden können. Diese Überprüfungen lassen sich im \textit{pull request} des betroffenen Branches nachvollziehen und auftretende Fehler werden sofort dargestellt.
+\subsection{\acrshort{jakarta-ee}}\label{sec:jakarta-ee}
 \acrfull{jakarta-ee} ist eine Java-Spezifikation, welche Java SE (Standard Edition) erweitert und ermöglicht damit das Entwickeln von mehrschichtigen, zuverlässigen und sicheren Netzwerkanwendungen. Zuvor war \acrshort{jakarta-ee} als Java EE bekannt.\newline\cite{java-ee}
 \subsection{MicroProfile}\label{sec:microprofile}
 Eclipse MicroProfile ist eine Erweiterung von \acrshort{jakarta-ee} und eine Alternative zu Spring, welches ein Framework der Firma Pivotal und vielgenutzte Lösung für \acrshort{jakarta-ee} Anwendungen und Microservices ist.\newline
@@ -116,12 +134,6 @@ MicroProfile bietet hingegen unter anderem Unterstützung für \acrfull{cdi}, so
 \subsection{Payara}
 Payara ist ein Application Server für Java-Anwendungen, insbesondere \acrshort{jakarta-ee}. Ein Application Server führt Anwendungsprogramme aus und bietet zum Beispiel Dienste für Restschnittstellen, Authentifizierung oder Datenbankzugriff. \cite{app-server}\newline
 Payara basiert auf dem GlassFish Server, erweitert diesen jedoch um besseren Support sowie regelmäßigere Releases und Sicherheitsupdates.\newline\cite{payara-vs-glassfish}
-\subsection{Docker}
-Docker ist eine quelloffene Software zur Isolierung von Anwendungen in sogenannten Containern. Mit ihr können zum Beispiel Webserver oder Datenbanken schnell eingerichtet werden, ohne diese vorher aufsetzen zu müssen.
-\subsubsection{Image}
-\textit{Images} sind die Vorlage zur Erstellung neuer Container. Sie können aus mehreren Schichten von anderen Images bestehen und so können komplexe Systeme leichtgewichtig und portabel erstellt werden.
-\subsubsection{Container}
-Ein \textit{Container} ist die aktive Instanz eines Docker images und kann beliebig konfiguriert und bearbeitet werden. Wird ein Container beendet und ein neuer nach der Vorlage desselben Images gestartet, gehen alle Änderungen verloren. Dies lässt sich durch die Verwendung von \textit{Volumes} verhindern, welche die Konfiguration eines Containers persistieren.
 \subsection{Postman}\label{sec:postman}
 Postman ist ein Programm um HTTP-Schnittstellen aufzurufen um diese zu testen. Die einzelnen Aufrufe können in sogenannten \textit{Collections} in Json-Format gespeichert werden, sodass sie in einer anderen Postman-Instanz importiert und wiederverwendet werden können. Durch diese beispielhaften Aufrufe ist es einfach, den Aufbau einer Schnittstelle zu verstehen.
 \subsection{React.js}\label{sec:react}
