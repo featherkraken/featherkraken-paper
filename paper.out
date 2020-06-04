@@ -14,15 +14,15 @@
 \BOOKMARK [2][-]{subsection.2.7}{React.js}{section.2}% 14
 \BOOKMARK [2][-]{subsection.2.8}{TypeScript}{section.2}% 15
 \BOOKMARK [1][-]{section.3}{Entwurf}{}% 16
-\BOOKMARK [2][-]{subsection.3.1}{Auswahl der externen API}{section.3}% 17
-\BOOKMARK [2][-]{subsection.3.2}{Datenmodell}{section.3}% 18
-\BOOKMARK [3][-]{subsubsection.3.2.1}{SearchRequest}{subsection.3.2}% 19
-\BOOKMARK [3][-]{subsubsection.3.2.2}{SearchResult}{subsection.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.3}{Framework}{section.3}% 21
-\BOOKMARK [1][-]{section.4}{Implementierung}{}% 22
-\BOOKMARK [2][-]{subsection.4.1}{Backend}{section.4}% 23
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Flughafensuche}{subsection.4.1}% 24
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Flugsuche}{subsection.4.1}% 25
+\BOOKMARK [2][-]{subsection.3.1}{Aufbau der Anwendung}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.2}{Auswahl der externen API}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.3}{Datenmodell}{section.3}% 19
+\BOOKMARK [3][-]{subsubsection.3.3.1}{SearchRequest}{subsection.3.3}% 20
+\BOOKMARK [3][-]{subsubsection.3.3.2}{SearchResult}{subsection.3.3}% 21
+\BOOKMARK [2][-]{subsection.3.4}{Framework}{section.3}% 22
+\BOOKMARK [1][-]{section.4}{Implementierung}{}% 23
+\BOOKMARK [2][-]{subsection.4.1}{Backend}{section.4}% 24
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Services}{subsection.4.1}% 25
 \BOOKMARK [2][-]{subsection.4.2}{Frontend}{section.4}% 26
 \BOOKMARK [1][-]{section.5}{Testing}{}% 27
 \BOOKMARK [2][-]{subsection.5.1}{Automatische Tests}{section.5}% 28
@@ -33,6 +33,5 @@
 \BOOKMARK [3][-]{subsubsection.6.2.1}{AirportsFinder}{subsection.6.2}% 33
 \BOOKMARK [3][-]{subsubsection.6.2.2}{Suche mit gemischten Klassen}{subsection.6.2}% 34
 \BOOKMARK [3][-]{subsubsection.6.2.3}{Deployment des Backend}{subsection.6.2}% 35
-\BOOKMARK [3][-]{subsubsection.6.2.4}{Sortieren/Filtern der Suchergebnisse}{subsection.6.2}% 36
-\BOOKMARK [2][-]{subsection.6.3}{Zusammenfassung}{section.6}% 37
-\BOOKMARK [1][-]{section*.17}{Literatur}{}% 38
+\BOOKMARK [2][-]{subsection.6.3}{Zusammenfassung}{section.6}% 36
+\BOOKMARK [1][-]{section*.20}{Literatur}{}% 37
