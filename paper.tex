@@ -33,6 +33,9 @@
 \newacronym{cdi}{CDI}{Context Dependency Injection}
 \newacronym{iata}{IATA}{IATA airport code}
 \newacronym{ci}{CI}{Continuous Integration}
+\newacronym{jar}{JAR}{Java Archive}
+\newacronym{war}{WAR}{Web Application Resource}
+\newacronym{ejb}{EJB}{Enterprise JavaBeans}
 \begin{document}
 \pagenumbering{gobble}
 % Deckblatt
@@ -126,6 +129,19 @@ Des Weiteren bietet \textit{GitHub Pages} die Möglichkeit, kostenlos statische 
 Auf GitHub befinden sich für diese Studienarbeit sowohl die \href{https://github.com/featherkraken}{Repositories} als auch das automatisierte \href{https://github.com/orgs/featherkraken/projects/1}{Project-Board} dazu. Außerdem wurde die aktuelle Version des \href{https://featherkraken.github.io/featherkraken-ui/}{Frontends} und dieses \href{https://featherkraken.github.io/featherkraken-paper/paper.pdf}{Dokuments} in GitHub Pages veröffentlicht.
 \subsection{CircleCI}
 Da die eingebaute \acrshort{ci} von GitHub nicht zufriedenstellend mit Docker zusammen funktioniert, wurde die externe Lösung \href{https://circleci.com/}{CircleCI} verwendet. Dabei lassen sich Docker-Container zum Ausführen von Befehlen verwenden um komplexere Szenarien umsetzen zu können. Die gute Integration von GitHub und CircleCI hat zur Folge, dass Tests und andere Überprüfungen automatisch mit jedem \textit{push} ausgelöst werden können. Diese Überprüfungen lassen sich im \textit{pull request} des betroffenen Branches nachvollziehen und auftretende Fehler werden sofort dargestellt.
+\subsection{Maven}
+Maven ist ein Management-Tool für Softwareprojekte und wird dabei hauptsächlich für Java-Projekte verwendet. Die Konfiguration des Projekts befindet sich in einem XML-Dokument (standardmäßig \textit{pom.xml}), in dem Bibliotheken und Plugins verwaltet werden. Mit Maven lässt sich ein ausführbares Artefakt des Projekts bauen, zum Beispiel als \acrfull{jar}, \acrfull{war} oder \acrfull{ejb}.\newline\cite{maven-packaging}
+\subsubsection{Ordnerstruktur}
+Maven zeichnet sich durch eine bestimmte Ordnerstruktur aus, welche strikt eingehalten werden muss.\\
+\texttt{src/main/java} Enthält die Java-Klassen für die Funktion des Projekts.\\
+\texttt{src/main/resources} Enthält Ressourcen für die Funktion des Projekts.\\
+\texttt{src/test/java} Enthält die Java-Klassen für Software-Tests.\\
+\texttt{src/test/resources} Enthält Ressourcen für die Software-Tests.\\
+Darüber hinaus gibt es noch weitere Ordner für spezielle Zwecke.\newline\cite{maven-dir-layout}
+\subsubsection{Dependencies}
+Externe Bibliotheken lassen sich leicht als \textit{dependency} einbinden, wobei die jeweiligen Artefakte aus Maven-Repositories im Internet heruntergeladen werden. Eine Dependency wird eindeutig durch Gruppen-ID (\texttt{groupId}), Artefakt-ID (\texttt{artifactId}) und Version (\texttt{version}) definiert. So wird sichergestellt, dass immer die gewünschte Bibliothek benutzt wird.
+\subsubsection{Plugins}
+Um verschiedene Befehle auf dem Projekt auszuführen, können Plugins verwendet werden. Diese lassen sich mit den gewünschten Parametern konfigurieren, um zum Beispiel Unit- und Integrations-Tests auszuführen oder die Testabdeckung dessen zu überprüfen.
 \subsection{\acrshort{jakarta-ee}}\label{sec:jakarta-ee}
 \acrfull{jakarta-ee} ist eine Java-Spezifikation, welche Java SE (Standard Edition) erweitert und ermöglicht damit das Entwickeln von mehrschichtigen, zuverlässigen und sicheren Netzwerkanwendungen. Zuvor war \acrshort{jakarta-ee} als Java EE bekannt.\newline\cite{java-ee}
 \subsection{MicroProfile}\label{sec:microprofile}
