@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.9)  3 JUN 2020 07:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.9)  4 JUN 2020 08:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -938,12 +938,12 @@ Overfull \hbox (23.32518pt too wide) in paragraph at lines 233--235
 er Web-seite dargestellt
  []
 
-<images/frontend-screenshot.png, id=377, 2438.10875pt x 1304.875pt>
+<images/frontend-screenshot.png, id=377, 2425.06pt x 1174.3875pt>
 File: images/frontend-screenshot.png Graphic file (type png)
 <use images/frontend-screenshot.png>
 Package pdftex.def Info: images/frontend-screenshot.png  used on input line 237
 .
-(pdftex.def)             Requested size: 426.79135pt x 228.41628pt.
+(pdftex.def)             Requested size: 426.79135pt x 206.66776pt.
 
 Overfull \hbox (31.39146pt too wide) in paragraph at lines 241--245
 \T1/phv/m/n/12 Eingabefelder für Start- und Zielflughafen be-nutzen den Ser-vic
@@ -1021,7 +1021,7 @@ Here is how much of TeX's memory you used:
 onts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb></usr/local/texlive/texmf-dist/fonts/type1/urw/helvetic/
 uhvro8a.pfb>
-Output written on paper.pdf (24 pages, 1021791 bytes).
+Output written on paper.pdf (24 pages, 1022066 bytes).
 PDF statistics:
  475 PDF objects out of 1000 (max. 8388607)
  420 compressed objects within 5 object streams
