@@ -19,6 +19,49 @@ java-ee}%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {{Introduction to the Standard Directory Layout}}}{%
+\APACcitebtitle {{Introduction to the Standard Directory Layout}}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+maven-dir-layout}
+\APACinsertmetastar {%
+maven-dir-layout}%
+\APACrefbtitle {{Introduction to the Standard Directory Layout}.}
+  {{Introduction to the Standard Directory Layout}.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+McMillan%
+}{%
+McMillan%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+linus-torvalds}
+\APACinsertmetastar {%
+linus-torvalds}%
+\begin{APACrefauthors}%
+McMillan, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+\APACrefbtitle {{The Legacy of Linus Torvalds: Linux, Git, and One Giant
+  Flamethrower}.} {{The Legacy of Linus Torvalds: Linux, Git, and One Giant
+  Flamethrower}.}
+\newblock
+\begin{APACrefURL} \url{https://www.wired.com/2012/11/linus-torvalds-isoc/}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Monteiro%
 }{%
 Monteiro%
@@ -80,6 +123,22 @@ payara-vs-glassfish}%
 \APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
 \newblock
 \begin{APACrefURL} \url{http://www.payara.org/payara-server-vs-glassfish}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {{POM Reference: packaging}}}{%
+\APACcitebtitle {{POM Reference: packaging}}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+maven-packaging}
+\APACinsertmetastar {%
+maven-packaging}%
+\APACrefbtitle {{POM Reference: packaging}.} {{POM Reference: packaging}.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://maven.apache.org/pom.html#packaging}
   \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 

@@ -4,34 +4,41 @@
 \BOOKMARK [2][-]{subsection.1.2}{Aufgabenstellung}{section.1}% 4
 \BOOKMARK [1][-]{section.2}{Wissenschaftliche Vertiefung}{}% 5
 \BOOKMARK [2][-]{subsection.2.1}{Entity Relationship Model}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.2}{Jakarta EE}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.3}{MicroProfile}{section.2}% 8
-\BOOKMARK [2][-]{subsection.2.4}{Payara}{section.2}% 9
-\BOOKMARK [2][-]{subsection.2.5}{Docker}{section.2}% 10
-\BOOKMARK [3][-]{subsubsection.2.5.1}{Image}{subsection.2.5}% 11
-\BOOKMARK [3][-]{subsubsection.2.5.2}{Container}{subsection.2.5}% 12
-\BOOKMARK [2][-]{subsection.2.6}{Postman}{section.2}% 13
-\BOOKMARK [2][-]{subsection.2.7}{React.js}{section.2}% 14
-\BOOKMARK [2][-]{subsection.2.8}{TypeScript}{section.2}% 15
-\BOOKMARK [1][-]{section.3}{Entwurf}{}% 16
-\BOOKMARK [2][-]{subsection.3.1}{Auswahl der externen Schnittstelle}{section.3}% 17
-\BOOKMARK [2][-]{subsection.3.2}{Aufbau der Anwendung}{section.3}% 18
-\BOOKMARK [2][-]{subsection.3.3}{Datenmodell}{section.3}% 19
-\BOOKMARK [3][-]{subsubsection.3.3.1}{SearchRequest}{subsection.3.3}% 20
-\BOOKMARK [3][-]{subsubsection.3.3.2}{SearchResult}{subsection.3.3}% 21
-\BOOKMARK [2][-]{subsection.3.4}{Framework}{section.3}% 22
-\BOOKMARK [1][-]{section.4}{Implementierung}{}% 23
-\BOOKMARK [2][-]{subsection.4.1}{Backend}{section.4}% 24
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Services}{subsection.4.1}% 25
-\BOOKMARK [2][-]{subsection.4.2}{Frontend}{section.4}% 26
-\BOOKMARK [1][-]{section.5}{Testing}{}% 27
-\BOOKMARK [2][-]{subsection.5.1}{Automatische Tests}{section.5}% 28
-\BOOKMARK [2][-]{subsection.5.2}{Manuelle Tests}{section.5}% 29
-\BOOKMARK [1][-]{section.6}{Fazit}{}% 30
-\BOOKMARK [2][-]{subsection.6.1}{Ausblick}{section.6}% 31
-\BOOKMARK [2][-]{subsection.6.2}{Bekannte Probleme}{section.6}% 32
-\BOOKMARK [3][-]{subsubsection.6.2.1}{AirportsFinder}{subsection.6.2}% 33
-\BOOKMARK [3][-]{subsubsection.6.2.2}{Suche mit gemischten Klassen}{subsection.6.2}% 34
-\BOOKMARK [3][-]{subsubsection.6.2.3}{Deployment des Backend}{subsection.6.2}% 35
-\BOOKMARK [2][-]{subsection.6.3}{Zusammenfassung}{section.6}% 36
-\BOOKMARK [1][-]{section*.21}{Literatur}{}% 37
+\BOOKMARK [2][-]{subsection.2.2}{Docker}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Image}{subsection.2.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Container}{subsection.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.3}{Git}{section.2}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.1}{GitHub}{subsection.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.4}{CircleCI}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.5}{Maven}{section.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.5.1}{Ordnerstruktur}{subsection.2.5}% 14
+\BOOKMARK [3][-]{subsubsection.2.5.2}{Dependencies}{subsection.2.5}% 15
+\BOOKMARK [3][-]{subsubsection.2.5.3}{Plugins}{subsection.2.5}% 16
+\BOOKMARK [2][-]{subsection.2.6}{jakarta-ee}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.7}{MicroProfile}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.8}{Payara}{section.2}% 19
+\BOOKMARK [2][-]{subsection.2.9}{Postman}{section.2}% 20
+\BOOKMARK [2][-]{subsection.2.10}{React.js}{section.2}% 21
+\BOOKMARK [2][-]{subsection.2.11}{TypeScript}{section.2}% 22
+\BOOKMARK [1][-]{section.3}{Entwurf}{}% 23
+\BOOKMARK [2][-]{subsection.3.1}{Auswahl der externen Schnittstelle}{section.3}% 24
+\BOOKMARK [2][-]{subsection.3.2}{Aufbau der Anwendung}{section.3}% 25
+\BOOKMARK [2][-]{subsection.3.3}{Datenmodell}{section.3}% 26
+\BOOKMARK [3][-]{subsubsection.3.3.1}{SearchRequest}{subsection.3.3}% 27
+\BOOKMARK [3][-]{subsubsection.3.3.2}{SearchResult}{subsection.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.4}{Framework}{section.3}% 29
+\BOOKMARK [1][-]{section.4}{Implementierung}{}% 30
+\BOOKMARK [2][-]{subsection.4.1}{Backend}{section.4}% 31
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Services}{subsection.4.1}% 32
+\BOOKMARK [2][-]{subsection.4.2}{Frontend}{section.4}% 33
+\BOOKMARK [1][-]{section.5}{Testing}{}% 34
+\BOOKMARK [2][-]{subsection.5.1}{Automatische Tests}{section.5}% 35
+\BOOKMARK [2][-]{subsection.5.2}{Manuelle Tests}{section.5}% 36
+\BOOKMARK [1][-]{section.6}{Fazit}{}% 37
+\BOOKMARK [2][-]{subsection.6.1}{Ausblick}{section.6}% 38
+\BOOKMARK [2][-]{subsection.6.2}{Bekannte Probleme}{section.6}% 39
+\BOOKMARK [3][-]{subsubsection.6.2.1}{AirportsFinder}{subsection.6.2}% 40
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Suche mit gemischten Klassen}{subsection.6.2}% 41
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Deployment des Backend}{subsection.6.2}% 42
+\BOOKMARK [2][-]{subsection.6.3}{Zusammenfassung}{section.6}% 43
+\BOOKMARK [1][-]{section*.21}{Literatur}{}% 44
