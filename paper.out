@@ -14,8 +14,8 @@
 \BOOKMARK [2][-]{subsection.2.7}{React.js}{section.2}% 14
 \BOOKMARK [2][-]{subsection.2.8}{TypeScript}{section.2}% 15
 \BOOKMARK [1][-]{section.3}{Entwurf}{}% 16
-\BOOKMARK [2][-]{subsection.3.1}{Aufbau der Anwendung}{section.3}% 17
-\BOOKMARK [2][-]{subsection.3.2}{Auswahl der externen API}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.1}{Auswahl der externen Schnittstelle}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.2}{Aufbau der Anwendung}{section.3}% 18
 \BOOKMARK [2][-]{subsection.3.3}{Datenmodell}{section.3}% 19
 \BOOKMARK [3][-]{subsubsection.3.3.1}{SearchRequest}{subsection.3.3}% 20
 \BOOKMARK [3][-]{subsubsection.3.3.2}{SearchResult}{subsection.3.3}% 21

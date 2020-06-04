@@ -19,31 +19,6 @@ java-ee}%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Finch%
-}{%
-Finch%
-}{%
-{\protect \APACyear {2018}}%
-}]{%
-kiwi-tequila}
-\APACinsertmetastar {%
-kiwi-tequila}%
-\begin{APACrefauthors}%
-Finch, B.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2018}{}{}.
-\newblock
-\APACrefbtitle {{Presenting Tequila: A revolution in the travel industry}.}
-  {{Presenting Tequila: A revolution in the travel industry}.}
-\newblock
-\begin{APACrefURL}
-  \url{https://partners.kiwi.com/presenting-tequila-revolution-travel-industry/}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Monteiro%
 }{%
 Monteiro%

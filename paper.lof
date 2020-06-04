@@ -1,10 +1,10 @@
 \babel@toc {ngerman}{}
 \contentsline {figure}{\numberline {1}{\ignorespaces Beispiel für eine Entity im \acrshort {erm}}}{2}{figure.caption.9}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Verschiedene Arten von Attributen im \acrshort {erm}}}{2}{figure.caption.11}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Aufbau der Anwendung}}{5}{figure.caption.12}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Vergleich der APIs}}{6}{figure.caption.13}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Vergleich der Schnittstellen}}{5}{figure.caption.12}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Aufbau der Anwendung}}{6}{figure.caption.13}%
 \contentsline {figure}{\numberline {5}{\ignorespaces \acrshort {erm} SearchRequest}}{7}{figure.caption.14}%
-\contentsline {figure}{\numberline {6}{\ignorespaces \acrshort {erm} SearchResult}}{7}{figure.caption.15}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Aufbau des Backends\relax }}{9}{figure.caption.16}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Screenshot des Frontend\relax }}{12}{figure.caption.19}%
+\contentsline {figure}{\numberline {6}{\ignorespaces \acrshort {erm} SearchResult}}{8}{figure.caption.15}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Aufbau des Backends\relax }}{10}{figure.caption.16}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Screenshot des Frontend\relax }}{13}{figure.caption.19}%
 \contentsline {figure}{\numberline {9}{\ignorespaces Testfälle des Frontends}}{15}{figure.caption.20}%
