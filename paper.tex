@@ -62,6 +62,7 @@ Die Stellen der Studienarbeit, die anderen Quellen im Wortlaut oder dem Sinn nac
 \vspace{1cm}\\Ostfildern, den \today \hspace{1cm} \hrulefill
 \newpage
 % Abstract
+\begin{sloppypar}
 \section*{Zusammenfassung}
 Bei Flügen über lange Strecken ist es häufig günstiger, Routen über nahe gelegene Flughäfen zu buchen. Um diese alternativen Routen zu finden, bieten Flugsuchdienste oft nur die Eingabe mehrerer Flughäfen an. Da diese für Reisende nicht alle bekannt sein können, wäre es besser einen Radius um den geplanten Abreiseort angeben zu können. Die Suchmaschine sucht darin nach Flughäfen und ermittelt Flüge von diesen zum Ziel.\\
 Im Rahmen dieser Studienarbeit wurde eine Softwarelösung entwickelt, welche diese Funktionalität in Form einer Webanwendung umsetzt.
@@ -303,6 +304,7 @@ Die externe API für die Flugsuche bietet die Möglichkeit, mit dem Parameter \t
 Es wurde versucht die Java-Anwendung auf \textit{Heroku} zu hosten, damit sie jederzeit im Internet genutzt werden kann. Dies war aber selbst nach vielen Tagen nicht nachvollziehbar, also wurde dieser Ansatz verworfen. Als Zwischenlösung könnte die Anwendung auf einem Linux-Server bereitgestellt werden. Dies sollte automatisch mit jeder Änderung im GitHub Repository erfolgen, wie es mit \textit{Heroku} versucht wurde.
 \subsection{Zusammenfassung}
 Nachdem die Aufgabenstellung evaluiert wurde, konnte schrittweise eine Softwarelösung entworfen werden. Dabei wurden verschiedene Abstraktionsebenen des Problems betrachtet und jeweilige Lösungen gefunden. Mit den gewählten Technologien wurde eine Webanwendung und eine Serveranwendung entwickelt, welche sich durch hohe Plattformunabhängigkeit auszeichnet. Es wurde darauf geachtet, dass die Anwendung leicht erweitert werden kann und der Code verständlich ist. Die Anwendungen werden mit \acrfull{ci} automatisch getestet und im Falle der Webanwendung auch immer mit dem neuesten Stand im Internet veröffentlicht. Abschließend wurden aufgetretene Probleme dokumentiert und Lösungsansätze aufgeführt.
+\end{sloppypar}
 % Literaturverzeichnis
 \newpage
 % set interlinepenalty to not split entries on page break
