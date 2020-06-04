@@ -63,12 +63,15 @@ Die Stellen der Studienarbeit, die anderen Quellen im Wortlaut oder dem Sinn nac
 \newpage
 % Abstract
 \section*{Zusammenfassung}
+Bei Flügen über lange Strecken ist es häufig günstiger, Routen über nahe gelegene Flughäfen zu buchen. Um diese alternativen Routen zu finden, bieten Flugsuchdienste oft nur die Eingabe mehrerer Flughäfen an. Da diese für Reisende nicht alle bekannt sein können, wäre es besser einen Radius um den geplanten Abreiseort angeben zu können. Die Suchmaschine sucht darin nach Flughäfen und ermittelt Flüge von diesen zum Ziel.\\
+Im Rahmen dieser Studienarbeit wurde eine Softwarelösung entwickelt, welche diese Funktionalität in Form einer Webanwendung umsetzt.
+\section*{Abstract}
+For long flights, it is often cheaper to book routes via nearby airports. To find these alternative routes, flight booking services often only offer the entry of multiple airports. As travellers may not know all of them, it would be better to enter a radius around the planned departure location. The search engine will then search for airports in the given radius and find flights from these airports to the destination.\\
+In the context of this study thesis a software solution was developed, which implements this functionality in form of a web application.
 % Verzeichnisse
 \newpage
 \tableofcontents
-\newpage
 \listoffigures
-\newpage
 \printglossary[type=\acronymtype]
 \printglossary
 \newpage
@@ -299,6 +302,7 @@ Die externe API für die Flugsuche bietet die Möglichkeit, mit dem Parameter \t
 \subsubsection{Deployment des Backend}
 Es wurde versucht die Java-Anwendung auf \textit{Heroku} zu hosten, damit sie jederzeit im Internet genutzt werden kann. Dies war aber selbst nach vielen Tagen nicht nachvollziehbar, also wurde dieser Ansatz verworfen. Als Zwischenlösung könnte die Anwendung auf einem Linux-Server bereitgestellt werden. Dies sollte automatisch mit jeder Änderung im GitHub Repository erfolgen, wie es mit \textit{Heroku} versucht wurde.
 \subsection{Zusammenfassung}
+Nachdem die Aufgabenstellung evaluiert wurde, konnte schrittweise eine Softwarelösung entworfen werden. Dabei wurden verschiedene Abstraktionsebenen des Problems betrachtet und jeweilige Lösungen gefunden. Mit den gewählten Technologien wurde eine Webanwendung und eine Serveranwendung entwickelt, welche sich durch hohe Plattformunabhängigkeit auszeichnet. Es wurde darauf geachtet, dass die Anwendung leicht erweitert werden kann und der Code verständlich ist. Die Anwendungen werden mit \acrfull{ci} automatisch getestet und im Falle der Webanwendung auch immer mit dem neuesten Stand im Internet veröffentlicht. Abschließend wurden aufgetretene Probleme dokumentiert und Lösungsansätze aufgeführt.
 % Literaturverzeichnis
 \newpage
 % set interlinepenalty to not split entries on page break
