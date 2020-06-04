@@ -128,6 +128,14 @@ TypeScript ist eine auf JavaScript basierende Programmiersprache und erweitert d
 \newpage
 % Hauptteil
 \section{Entwurf}
+In diesem Kapitel werden Ansätze zur Implementierung der Anwendung verglichen und die jeweils gewählte Lösung aufgeführt. Die Ansätze reichen durch alle Abstraktionsebenen von Überlegungen zum Aufbau des Projekts, über Modellierung der Daten bis hin zu gewählten Frameworks.
+\subsection{Aufbau der Anwendung}
+Bei dem ersten Entwurf der Anwendung fiel auf, dass die gesamte Funktionalität mit zwei verschiedene Ansätzen gelöst werden konnte. Zum einen könnte man externe APIs direkt aus dem Frontend aufrufen, sodass eine Serveranwendung nicht notwendig wäre. Dies hätte den Vorteil, dass der Technologie-Stack reduziert würde. Andererseits hätte es den Nachteil, dass das Projekt unübersichtlich werden könnte. Deshalb ist es sinnvoll, das clientseitige User Interface von der Funktionalität zu trennen und jeweils passende Technologien für beide zu finden.
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[width=7cm]{images/client-design}
+	\captionof{figure}[Aufbau der Anwendung]{Aufbau der Anwendung}
+\end{center}
 \subsection{Auswahl der externen API}
 Um Flugdaten zu erhalten muss eine externe Schnittstelle benutzt werden, welche die Pflichtanforderungen erfüllt und dabei leicht zu verwenden ist. Die Wahl der Schnittstelle fiel dabei auf eine Rest-API, da diese sehr einfach zu benutzen sind. Für die Auswahl des Anbieters wurde eine Tabelle\textsuperscript{\ref{fig:api-comparison}} erstellt, welche die Pflichtanforderungen mit den Funktionalitäten der jeweiligen Schnittstelle abgleicht. Dabei erfüllte die API von Kiwi nicht nur alle Anforderungen, sondern war auch sehr gut dokumentiert und mit Beispielen beschrieben. Des Weiteren bot Kiwi auch eine Rest-API um Flughäfen im Umkreis gegebener Koordinaten zu finden, was der Aufgabe entgegen kam.
 \begin{center}
@@ -159,7 +167,6 @@ Um Flugdaten zu erhalten muss eine externe Schnittstelle benutzt werden, welche 
 	\captionof{figure}[Vergleich der APIs]{Tabelle zum Vergleich der APIs}
 	\label{fig:api-comparison}
 \end{center}
-\newpage
 \subsection{Datenmodell}
 Das \acrlong{erm} für das Datenmodell wurde hier aufgeteilt in Suchanfrage (\texttt{SearchRequest}) und Suchergebnis (\texttt{SearchResult}).
 \subsubsection{SearchRequest}
@@ -182,9 +189,10 @@ Bei erster Betrachtung fällt auf, dass Informationen über Airlines und Zeiten 
 Die Anwendung wird in eine Server- und eine Web-Anwendung unterteilt, für welche jeweils eine Framework-Technologie gewählt werden muss. Die Serveranwendung übersetzt Suchanfragen von der Oberfläche zu einem Format, welches die externe Schnittstelle akzeptiert und leitet das Sucherergebnis daraufhin an die Oberfläche zurück. Dies bedeutet, dass die Serveranwendung als Rest-Client für die externe Schnittstelle und selbst als Rest-Schnittstelle für die Oberfläche dient.\\
 Für die Komponenten war das Thema Plattformunabhängigkeit sehr wichtig und aus eigener Erfahrung eignet sich dafür Java sehr gut, da es eine große Community hat und eine Anwendung in kurzer Zeit aufgesetzt ist. Außerdem bietet Java einfache Möglichkeiten eine externe Rest-Schnittstelle anzusprechen.\\
 Als Bedingung für die Web-Oberfläche ist es unabdingbar, dass die Anwendung intuitiv bedienbar ist und auf allen Endgeräten gut dargestellt werden kann. Für diesen Zweck kommen eigentlich nur drei Frameworks in Frage: Angular, React.js und Vue.js. Dabei wurde React gewählt, welches sich besser als Vue.js und Angular für kleine Anwendungen eignet, wie es in diesem Fall zutrifft. Bei dem hier vorliegenden Fall wird es sogar eine sogenannte Single-Page-Webapplication, das heißt die gesamte Funktion kann auf einer Seite dargestellt werden.
+\newpage
 % Umsetzung
 \section{Implementierung}
-In diesem Kapitel werden die Umsetzung der Anwendung beschrieben, wobei die Anwendung in eine Serveranwendung (Backend) und eine Webanwendung (Frontend) unterteilt wurde.
+In diesem Kapitel werden die Umsetzung der Anwendung beschrieben. Wie schon im vorangegangenem Kapitel beschrieben, wurde die Anwendung in eine Serveranwendung (Backend) und eine Webanwendung (Frontend) unterteilt wurde.
 \subsection{Backend}
 Das Backend der Anwendung dient als Proxy zwischen Web-Frontend und externer API und wurde in Java geschrieben. Dabei wurde Jakarta EE\textsuperscript{\ref{sec:jakarta-ee}} und Eclipse Microprofile\textsuperscript{\ref{sec:microprofile}} verwendet, um eine Rest-Schnittstelle für die Suche von Flügen zu bieten. Durch das Verwenden von Microprofile lässt sich die Anwendung einfach in einem Payara Application Server starten. Dieser wurde mithilfe eines Docker Images umgesetzt und dadurch lässt er sich einfach in einer Cloud Umgebung oder klassisch auf einem Windows- oder Linux-Server deployen.
 \begin{center}
@@ -192,13 +200,15 @@ Das Backend der Anwendung dient als Proxy zwischen Web-Frontend und externer API
 	\includegraphics[height=5cm]{images/backend-structure}
 	\captionof{figure}{Aufbau des Backends}
 \end{center}
-\subsubsection[Flughafensuche]{Flughafensuche: GET /airports}\label{sec:airport-search}
+\subsubsection{Services}
+Das Backend bietet verschiedene Rest-Services für ein User Interface, um nach Flughäfen und Flügen suchen zu können.
+\paragraph[Flughafensuche]{Flughafensuche: GET /airports}\label{sec:airport-search}
 Um bestimmte Flughäfen mit einem Teil des Namens des Flughafens oder der Stadt suchen zu können, gibt es den Endpoint \texttt{/airports} der mit einem GET-Request erreicht werden kann. Die Eingabe wird über den Query-Parameter 'query' in der URL des Requests übergeben. Ein beispielhafter Request für die Suche von Flughäfen in Amsterdam kann zum Beispiel folgendermaßen aufgebaut sein:\\
 \begin{center}
 	\texttt{GET www.featherkraken-example.com/airports?query=Ams}
 \end{center}
 Damit werden alle Flughäfen gesucht, welche den Wortteil 'Ams' im \acrlong{iata} oder Städtenamen enthalten. Die Antwort des Services besteht aus einer Liste aus gefundenen Flughäfen, welche jeweils \acrlong{iata}, vollen Anzeigenamen und Koordinaten enthalten.
-\subsubsection[Flugsuche]{Flugsuche: POST /flights}
+\paragraph[Flugsuche]{Flugsuche: POST /flights}
 Die Kernfunktion der Anwendung steckt hinter dem Endpoint \texttt{/flights}, welcher eingehende Suchanfragen in ein für die externe API verständliches Format übersetzt und das Suchergebnis dann zurückgibt. Suchparameter werden hier nicht in der URL des Requests übergeben, sondern mit einem POST im Request-Body, da die Suchanfrage so übersichtlicher und leichter zu dokumentieren ist. Bei der Suche kann wahlweise ein Radius angegeben werden, dann werden Flüge von umliegenden Abflughäfen gesucht. So kann eine Suchanfrage für Flüge von Frankfurt und Umgebung (100km) zum Beispiel so aussehen:\\
 \begin{Verbatim}
 {
@@ -228,7 +238,6 @@ Die Kernfunktion der Anwendung steckt hinter dem Endpoint \texttt{/flights}, wel
 }
 \end{Verbatim}
 Für die Flughafenobjekte in \texttt{source} und \texttt{target} ist nur der eindeutige \acrlong{iata} in \texttt{source.name} entscheidend. Der Radius wird in Kilometern angegeben. In diesem Beispiel werden Hin- und Rückflüge zwischen Frankfurt und Los Angeles in der Klasse 'Economy' gesucht. Außerdem ist zu erkennen, wie ein variables Abflugdatum (11.11. - 13.11.2020) angegeben werden kann.
-\newpage
 \subsection{Frontend}
 Das Frontend ist eine Web-Anwendung, die mit dem Framework React.js\textsuperscript{\ref{sec:react}} in TypeScript\textsuperscript{\ref{sec:typescript}} geschrieben wurde. Für diesen Anwendungsfall genügte eine Single-Page-Application, das heißt, dass die gesamte Funktion auf einer Webseite dargestellt werden kann.\\
 Durch den Einsatz von der Bibliothek \texttt{react-bootstrap} lassen sich Komponenten im Material Design einfach zusammenbauen. Material Design wurde von Google\texttrademark entwickelt und ist eine Design-Richtlinie für Oberflächen. Der Vorteil ist, dass man dabei kein Grafikdesigner sein muss, um eine ansprechende Webanwendung zu bauen.
@@ -242,6 +251,7 @@ Wie in Abbildung \ref{fig:frontend} zu sehen ist, kann bei der Suche nach Art de
 In den Eingabefeldern darunter können Suchparameter wie Startflughafen, Entfernungsfilter, Zielflughafen und An- und Abreisedatum eingegeben werden. Die Eingabefelder für Start- und Zielflughafen benutzen den Service zur Flughafensuche\textsuperscript{\ref{sec:airport-search}} um Flughäfen mit dem eingegebenen Wortteil in Echtzeit zu suchen.\\
 Liefert das Backend nach Klicken des Suchbuttons Suchergebnisse zurück, lassen sich diese nach bestimmten Flughäfen und Airlines filtern, wie an dem Dropdown in Abbildung \ref{fig:frontend} zu sehen ist.\\
 Die Suchergebnisse sind in einer Liste aufgeführt und unterteilen sich jeweils in Hin- und Rückflug, wenn nicht nur nach Hinflug gesucht wurde. Ein Logo informiert den Benutzer über die Airline jeden Flugs.
+\newpage
 \section{Testing}
 Das Testen der Anwendung war ein wichtiger Teil für den Erfolg des Projekts. Deshalb wurden nicht nur alle Software-Komponenten mit Unit-Tests abgedeckt, sondern auch Integrations-Tests geschrieben. All diese Tests werden programmatisch ausgeführt und werden von einer \acrshort{ci} in GitHub automatisch bei jedem \textit{push} ausgeführt. Ein \textit{merge} in den Master ist nur möglich wenn alle Tests erfolgreich ausgeführt wurden. Für alle Testfälle wurden realitätsnahe Bedingungen und Daten gewählt.\\
 Des Weiteren wurde die Oberfläche, und somit das gesamte System mit der Erwartung der gewünschten Ergebnisse manuell getestet und abgeglichen.
