@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.9)  4 JUN 2020 08:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.9)  4 JUN 2020 09:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -746,7 +746,7 @@ l.63 \newpage
 ame{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.67 \newpage
+l.73 \newpage
               [3] (./paper.tocpdfTeX warning (ext4): destination with the same 
 identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
@@ -756,161 +756,96 @@ l.36 ...1}AirportsFinder}{17}{subsubsection.6.2.1}
 \tf@toc=\write8
 \openout8 = `paper.toc'.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.69 \newpage
-              [5] (./paper.lof)
+ (./paper.lof)
 \tf@lof=\write9
 \openout9 = `paper.lof'.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
+
+(./paper.acr) (./paper.gls)pdfTeX warning (ext4): destination with the same ide
+ntifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.71 \newpage
-              [6] (./paper.acr) (./paper.gls)pdfTeX warning (ext4): destination
- with the same identifier (name{page.}) has been already used, duplicate ignore
-d
-<to be read again> 
-                   \relax 
-l.74 \newpage
-              [7]
-Overfull \hbox (2.63658pt too wide) in paragraph at lines 84--87
-\T1/phv/m/n/12 heiÿt die Un-ter-schei-dung ob man nur einen Hin-flug oder Hin- 
-und Rück-flug buchen
- []
-
-
-Overfull \hbox (40.6539pt too wide) in paragraph at lines 84--87
-\T1/phv/m/n/12 (Econ-o-my, Busi-ness, First Class) soll auch die Wahl der Air-l
-ine oder Al-lianz eingeschränkt
- []
-
-
-Overfull \hbox (1.18394pt too wide) in paragraph at lines 84--87
-\T1/phv/m/n/12 Zusätzlich soll ein Ent-fer-nungs-fil-ter um einen möglichen Abf
-lughafen bere-it-gestellt
- []
-
-[1]
-Overfull \hbox (0.70381pt too wide) in paragraph at lines 89--90
-\T1/phv/m/n/12 In diesem Kapi-tel wer-den tech-nis-che Grund-la-gen aufge-führt
- und er-läutert, welche
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+l.78 \newpage
+              [5] [1]
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 
-Overfull \hbox (2.30078pt too wide) in paragraph at lines 93--94
-\T1/phv/m/n/12 sitzen, wobei kom-plexe At-tribute als Beziehun-gen zu an-deren 
-Ob-jek-ten dargestellt
+Underfull \hbox (badness 1142) in paragraph at lines 97--98
+\T1/phv/m/n/12 be-sitzen, wobei kom-plexe At-tribute als Beziehun-gen zu an-der
+en Ob-jek-ten
  []
 
-<images/ERM-Entity.png, id=282, 3016.26875pt x 612.2875pt>
+<images/ERM-Entity.png, id=278, 3016.26875pt x 612.2875pt>
 File: images/ERM-Entity.png Graphic file (type png)
 <use images/ERM-Entity.png>
-Package pdftex.def Info: images/ERM-Entity.png  used on input line 96.
+Package pdftex.def Info: images/ERM-Entity.png  used on input line 100.
 (pdftex.def)             Requested size: 426.79135pt x 86.63525pt.
-<images/ERM-Attributes.png, id=284, 1309.89375pt x 205.76875pt>
+<images/ERM-Attributes.png, id=280, 1309.89375pt x 205.76875pt>
 File: images/ERM-Attributes.png Graphic file (type png)
 <use images/ERM-Attributes.png>
-Package pdftex.def Info: images/ERM-Attributes.png  used on input line 104.
+Package pdftex.def Info: images/ERM-Attributes.png  used on input line 108.
 (pdftex.def)             Requested size: 284.52756pt x 44.69467pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 109.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 113.
 
-Overfull \hbox (7.43582pt too wide) in paragraph at lines 109--110
-\T1/phv/m/n/12 (Stan-dard Edi-tion) er-weit-ert und er-möglicht damit das En-tw
-ick-eln von mehrschichti-
+Underfull \hbox (badness 1281) in paragraph at lines 113--114
+[][][]\T1/phv/m/n/12 Jakarta En-ter-prise Edi-tion[][] ([][][]Jakar-ta EE[][]) 
+ist eine Spez-i-fika-tion, welche Ja-
  []
 
 [2 <./images/ERM-Entity.png> <./images/ERM-Attributes.png>]
-Overfull \hbox (2.32858pt too wide) in paragraph at lines 119--120
+Underfull \hbox (badness 1048) in paragraph at lines 123--124
 \T1/phv/m/sl/12 Images \T1/phv/m/n/12 sind die Vor-lage zur Er-stel-lung neuer 
-Con-tain-er. Sie kön-nen aus mehreren
+Con-tain-er. Sie kön-nen aus
  []
 
-[3]
-Overfull \hbox (0.44508pt too wide) in paragraph at lines 125--126
-\T1/phv/m/n/12 React.js ist eine JavaScript Bib-lio-thek um We-ban-wen-dun-gen 
-zu en-twick-eln. Damit
- []
-
-[4]
-<images/client-design.png, id=329, 853.1875pt x 945.5325pt>
+[3] [4]
+<images/client-design.png, id=326, 853.1875pt x 945.5325pt>
 File: images/client-design.png Graphic file (type png)
 <use images/client-design.png>
-Package pdftex.def Info: images/client-design.png  used on input line 136.
+Package pdftex.def Info: images/client-design.png  used on input line 140.
 (pdftex.def)             Requested size: 199.16928pt x 220.72855pt.
-
-Overfull \hbox (1.60484pt too wide) in paragraph at lines 140--141
-\T1/phv/m/n/12 Um Flug-dat-en zu er-hal-ten muss eine ex-terne Schnittstelle be
--nutzt wer-den, welche
- []
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./images/client-design.png>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-71.
+75.
  (/usr/local/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Overfull \hbox (7.33968pt too wide) in paragraph at lines 171--172
-\T1/phv/m/n/12 Das [][][]En-ti-ty Re-la-tion-ship Mod-el[][] für das Daten-mod-
-ell wurde hi-er aufgeteilt in Suchan-
- []
-
-<images/datamodel-SearchRequest.png, id=337, 5189.3875pt x 1470.49374pt>
+<images/datamodel-SearchRequest.png, id=334, 5189.3875pt x 1470.49374pt>
 File: images/datamodel-SearchRequest.png Graphic file (type png)
 <use images/datamodel-SearchRequest.png>
 Package pdftex.def Info: images/datamodel-SearchRequest.png  used on input line
- 176.
+ 180.
 (pdftex.def)             Requested size: 426.79135pt x 120.91783pt.
 [6]
-<images/datamodel-SearchResult.png, id=345, 4521.89375pt x 2644.88126pt>
+<images/datamodel-SearchResult.png, id=341, 4521.89375pt x 2644.88126pt>
 File: images/datamodel-SearchResult.png Graphic file (type png)
 <use images/datamodel-SearchResult.png>
 Package pdftex.def Info: images/datamodel-SearchResult.png  used on input line 
-184.
+188.
 (pdftex.def)             Requested size: 426.79135pt x 249.61166pt.
  [7 <./images/datamodel-SearchRequest.png> <./images/datamodel-SearchResult.png
 >] [8]
-Overfull \hbox (2.0889pt too wide) in paragraph at lines 195--196
-\T1/phv/m/n/12 In diesem Kapi-tel wer-den die Um-set-zung der An-wen-dung besch
-rieben. Wie schon
- []
-
-
-Overfull \hbox (0.12402pt too wide) in paragraph at lines 197--198
-\T1/phv/m/n/12 tern-er API und wurde in Ja-va geschrieben. Dabei wurde Jakar-ta
- EE$[]$ und Eclipse
- []
-
-<images/backend-structure.png, id=359, 607.26875pt x 958.58125pt>
+<images/backend-structure.png, id=356, 607.26875pt x 958.58125pt>
 File: images/backend-structure.png Graphic file (type png)
 <use images/backend-structure.png>
-Package pdftex.def Info: images/backend-structure.png  used on input line 200.
+Package pdftex.def Info: images/backend-structure.png  used on input line 204.
 (pdftex.def)             Requested size: 90.1227pt x 142.26378pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
-[9 <./images/backend-structure.png>]
-Overfull \hbox (1.06906pt too wide) in paragraph at lines 212--213
-\T1/phv/m/n/12 ichter zu doku-men-tieren ist. Bei der Suche kann wahlweise ein 
-Ra-dius angegeben
- []
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
+ [9 <./images/backend-structure.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
@@ -919,7 +854,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 2
-43.
+47.
 
 (/usr/local/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
@@ -940,52 +875,46 @@ LaTeX Warning: Font shape declaration has incorrect series value `mc'.
                Found on input line 34.
 
 )
-Overfull \hbox (3.61667pt too wide) in paragraph at lines 242--244
-\T1/phv/m/n/12 TypeScript$[]$ geschrieben wurde. Für diesen An-wen-dungs-fall g
-enügte eine Single-
- []
-
-
-Overfull \hbox (23.32518pt too wide) in paragraph at lines 242--244
-\T1/phv/m/n/12 Page-Application, das heiÿt, dass die gesamte Funk-tion auf ein-
-er Web-seite dargestellt
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
-<images/frontend-screenshot.png, id=380, 2425.06pt x 1174.3875pt>
+<images/frontend-screenshot.png, id=377, 2425.06pt x 1174.3875pt>
 File: images/frontend-screenshot.png Graphic file (type png)
 <use images/frontend-screenshot.png>
-Package pdftex.def Info: images/frontend-screenshot.png  used on input line 246
+Package pdftex.def Info: images/frontend-screenshot.png  used on input line 250
 .
 (pdftex.def)             Requested size: 426.79135pt x 206.66776pt.
 
-Overfull \hbox (31.39146pt too wide) in paragraph at lines 250--254
-\T1/phv/m/n/12 Eingabefelder für Start- und Zielflughafen be-nutzen den Ser-vic
-e zur Flughafensuche$[]$
- []
-
-
-Overfull \hbox (4.30553pt too wide) in paragraph at lines 250--254
-\T1/phv/m/n/12 Liefert das Back-end nach Klick-en des Such-but-tons Suchergeb-n
-isse zurück, lassen
+Underfull \hbox (badness 1038) in paragraph at lines 254--258
+\T1/phv/m/n/12 In den Eingabefeldern darunter kön-nen Such-pa-ram-e-ter wie Sta
+rt-flughafen,
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12 <./images/frontend-screenshot.png>] [13]
-Overfull \hbox (45.37656pt too wide) in paragraph at lines 259--262
-\T1/phv/m/n/12 ra-tion dieser Über-prü-fun-gen kann dem Doku-ment [][]\T1/cmtt/
-m/n/12 featherkraken/.circleci/config.yml[][]
+Underfull \hbox (badness 1253) in paragraph at lines 263--266
+\T1/phv/m/sl/12 Cir-cle-CI \T1/phv/m/n/12 aus-ge-führt, wenn die Än-derun-gen i
+n das GitHub Repos-i-to-ry ge-
  []
 
 
-Overfull \hbox (44.80644pt too wide) in paragraph at lines 263--265
-\T1/phv/m/n/12 Rest-Schnittstellen des Back-ends. Diese kann unter [][]\T1/cmtt
-/m/n/12 src/test/postman/Collection.json[][]
+Underfull \hbox (badness 1264) in paragraph at lines 263--266
+\T1/phv/m/n/12 pusht wer-den. Pull Re-quests sind so kon-fig-uri-ert, dass sie 
+nur nach er-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
+\T1/phv/m/n/12 Zusätzlich zu den au-toma-tis-chen Tests gibt es eine \T1/phv/m/
+sl/12 Postman-
+ []
+
+
+Underfull \hbox (badness 2521) in paragraph at lines 267--269
+\T1/phv/m/sl/12 Collection$[]$ \T1/phv/m/n/12 für die Rest-Schnittstellen des B
+ack-ends. Diese kann unter
  []
 
 
@@ -993,56 +922,59 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
 [15]
-Overfull \hbox (7.32893pt too wide) in paragraph at lines 287--288
-\T1/phv/m/n/12 wen-dung einge-gan-gen, denn Software-Entwicklung ist ein niemal
-s abgeschlossen-
+Underfull \hbox (badness 1043) in paragraph at lines 291--292
+\T1/phv/m/n/12 Zunächst wird hi-er in einem Aus-blick auf Möglichkeit-en zur Ve
+rbesserung
  []
 
 
-Overfull \hbox (1.06435pt too wide) in paragraph at lines 289--294
-\T1/phv/m/n/12 nte be-deuten, dass die Rest-Schnittstelle ve-r-al-tet ist und d
-e-shalb bes-timmte Prob-
+Underfull \hbox (badness 2205) in paragraph at lines 291--292
+\T1/phv/m/n/12 der An-wen-dung einge-gan-gen, denn Software-Entwicklung ist ein
+ niemals
  []
 
 
-Overfull \hbox (1.0998pt too wide) in paragraph at lines 296--297
-\T1/phv/m/n/12 timmten Ra-dius scheint eine Pri-or-isierung der Flughäfen oder 
-eine Ein-schränkung
+Underfull \hbox (badness 2837) in paragraph at lines 291--292
+\T1/phv/m/n/12 abgeschlossen-er Vor-gang. Danach wer-den bekan-nte Prob-leme un
+d Ein-
  []
 
 
 Underfull \vbox (badness 2213) has occurred while \output is active []
 
  [16]
-[17] (./paper.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
- [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+[18] (./paper.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 313.
+ [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 313.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 313.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 313.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: E791C7B012B011756A897054669A95EF;2286.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 307.
+(rerunfilecheck)             Checksum: 0D36A0B72AD301EF01DAA8EB42CAE8C4;2286.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 313.
  ) 
 Here is how much of TeX's memory you used:
- 16393 strings out of 482862
- 269978 string characters out of 5957990
- 606763 words of memory out of 5000000
+ 16395 strings out of 482862
+ 269996 string characters out of 5957990
+ 607764 words of memory out of 5000000
  31231 multiletter control sequences out of 15000+600000
  558756 words of font info for 54 fonts, out of 8000000 for 9000
  42 hyphenation exceptions out of 8191
- 51i,8n,77p,1000b,629s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,8n,77p,1000b,853s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr
 /local/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/texmf
 -dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/texmf-dist/f
 onts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb></usr/local/texlive/texmf-dist/fonts/type1/urw/helvetic/
 uhvro8a.pfb>
-Output written on paper.pdf (25 pages, 1065365 bytes).
+Output written on paper.pdf (24 pages, 1067069 bytes).
 PDF statistics:
- 480 PDF objects out of 1000 (max. 8388607)
- 422 compressed objects within 5 object streams
- 88 named destinations out of 1000 (max. 500000)
+ 481 PDF objects out of 1000 (max. 8388607)
+ 424 compressed objects within 5 object streams
+ 90 named destinations out of 1000 (max. 500000)
  347 words of extra memory for PDF output out of 10000 (max. 10000000)
 
