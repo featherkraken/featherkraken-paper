@@ -298,8 +298,6 @@ Die externe Schnittstelle \href{https://rapidapi.com/cometari/api/airportsfinder
 Die externe API für die Flugsuche bietet die Möglichkeit, mit dem Parameter \texttt{mix\_with\_cabins} über mehrere Klassen zu suchen, wenn keine Flüge in der angegebenen Klasse gefunden werden können. Diese Funktion ist bei der API von Kiwi.com nicht gut dokumentiert oder fehlerhaft umgesetzt. Zur Lösung für dieses Problem könnten weitere Anfragen mit anderen Klassen abgeschickt werden, wenn die gegebene Klasse keine Ergebnisse liefert.
 \subsubsection{Deployment des Backend}
 Es wurde versucht die Java-Anwendung auf \textit{Heroku} zu hosten, damit sie jederzeit im Internet genutzt werden kann. Dies war aber selbst nach vielen Tagen nicht nachvollziehbar, also wurde dieser Ansatz verworfen. Als Zwischenlösung könnte die Anwendung auf einem Linux-Server bereitgestellt werden. Dies sollte automatisch mit jeder Änderung im GitHub Repository erfolgen, wie es mit \textit{Heroku} versucht wurde.
-\subsubsection{Sortieren/Filtern der Suchergebnisse}
-Das Sortieren oder Filtern der Suchergebnisse - zum Beispiel nach Abflughafen oder Airline - stellte sich komplizierter als gedacht heraus. Leider konnte dazu kein Experte in React.js oder TypeScript gefunden werden. Wenn sich einer finden lässt, ist dieses Problem in angemessener Zeit zu lösen.
 \subsection{Zusammenfassung}
 % Literaturverzeichnis
 \newpage
