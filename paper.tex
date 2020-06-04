@@ -22,9 +22,6 @@
 \usepackage{fancyvrb}
 \usepackage{graphicx}
 \usepackage{apacite}
-\usepackage{xspace}
-\let\OldTexttrademark\texttrademark
-\renewcommand{\texttrademark}{\OldTexttrademark\xspace}%
 \usepackage[acronym]{glossaries}
 \makeglossaries
 \newacronym{erm}{ERM}{Entity Relationship Model}
@@ -75,9 +72,10 @@ In the context of this study thesis a software solution was developed, which imp
 % Verzeichnisse
 \newpage
 \tableofcontents
+\newpage
 \listoffigures
+\vfill
 \printglossary[type=\acronymtype]
-\printglossary
 \newpage
 \interlinepenalty=10000
 \pagenumbering{arabic}
