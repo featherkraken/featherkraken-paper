@@ -182,4 +182,19 @@ Technologies, I\BPBI A\BPBI .%
   \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {{What is Heroku?}}}{%
+\APACcitebtitle {{What is Heroku?}}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+heroku}
+\APACinsertmetastar {%
+heroku}%
+\APACrefbtitle {{What is Heroku?}} {{What is Heroku?}}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://www.heroku.com/what} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
 \end{thebibliography}

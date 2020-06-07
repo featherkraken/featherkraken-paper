@@ -146,10 +146,15 @@ Um verschiedene Befehle auf dem Projekt auszuführen, können Plugins verwendet 
 Eclipse MicroProfile ist eine Erweiterung von \acrshort{jakarta-ee} und eine Alternative zu Spring, welches ein Framework der Firma Pivotal und vielgenutzte Lösung für \acrshort{jakarta-ee} Anwendungen und Microservices ist.\newline
 MicroProfile bietet hingegen unter anderem Unterstützung für \acrfull{cdi}, sowie eine bessere Konfigurierbarkeit der Anwendung.\newline\cite{microprofile}
 \subsection{Payara}
-Payara ist ein Application Server für Java-Anwendungen, insbesondere \acrshort{jakarta-ee}. Ein Application Server führt Anwendungsprogramme aus und bietet zum Beispiel Dienste für Restschnittstellen, Authentifizierung oder Datenbankzugriff. \cite{app-server}\newline
-Payara basiert auf dem GlassFish Server, erweitert diesen jedoch um besseren Support sowie regelmäßigere Releases und Sicherheitsupdates.\newline\cite{payara-vs-glassfish}
+Payara ist ein Application Server für Java-Anwendungen, insbesondere \acrshort{jakarta-ee}. Ein Application Server führt Anwendungsprogramme aus und bietet zum Beispiel Dienste für Restschnittstellen, Authentifizierung oder Datenbankzugriff.\\
+\cite{app-server}\newline
+Payara basiert auf dem GlassFish Server, erweitert diesen jedoch um besseren Support sowie regelmäßigere Releases und Sicherheitsupdates. Außerdem bietet Payara mit Payara Micro eine leichtgewichtige Variante des vollen Servers in Form eines \acrlong{jar}. So können Anwendungen jederzeit und überall schnell gestartet werden. Dies ist zum Beispiel in einer Cloud-Umgebung oder auf einem Raspberry PI nützlich, da diese über begrenzten Speicherplatz verfügen könnten.\\
+\cite{payara-vs-glassfish}
 \subsection{Postman}\label{sec:postman}
 Postman ist ein Programm um HTTP-Schnittstellen aufzurufen um diese zu testen. Die einzelnen Aufrufe können in sogenannten \textit{Collections} in Json-Format gespeichert werden, sodass sie in einer anderen Postman-Instanz importiert und wiederverwendet werden können. Durch diese beispielhaften Aufrufe ist es einfach, den Aufbau einer Schnittstelle zu verstehen.
+\subsection{Heroku}\label{sec:heroku}
+Heroku ist eine Plattform für Cloud-Anwendungen, welche auch kostenlos viele Dienste bietet. Dabei werden Anwendungen in vielen Programmiersprachen unterstützt. Dabei lässt sich eine Heroku-Application mit einem GitHub-Repository verbinden, um automatisch den neuesten Stand einer Anwendung in einem sogenannten \textit{Dyno} zu starten. Die Konfiguration einer Anwendung ist sehr simpel und wird mit einer Datei namens \texttt{Procfile} im Projekt definiert.\\
+\cite{heroku}
 \subsection{React.js}\label{sec:react}
 React.js ist eine JavaScript-Bibliothek um Webanwendungen zu entwickeln. Damit lassen sich einfach interaktive Oberflächen erstellen, wobei man für jede Komponente der Anwendung sogenannte \textit{Views} definiert. Dabei rendert React.js eine Komponente nur neu, wenn sich dessen Daten ändern. Dadurch wird die Anwendung effizient und der Code wird übersichtlicher und einfacher zu debuggen. Außerdem lassen sich Komponenten abstrakt definieren und mehrfach verwenden, was der gesamten Anwendung ein einheitliches Aussehen gibt. \cite{react}
 \subsection{TypeScript}\label{sec:typescript}
@@ -222,12 +227,13 @@ Als Bedingung für die Web-Oberfläche ist es unabdingbar, dass die Anwendung in
 \section{Implementierung}
 In diesem Kapitel wird die Umsetzung der Anwendung beschrieben. Wie bereits erwähnt, wurde die Anwendung in eine Serveranwendung (Backend) und eine Webanwendung (Frontend) unterteilt.
 \subsection{Backend}
-Das Backend der Anwendung dient als Proxy zwischen Frontend und externer Schnittstelle und wurde in Java geschrieben. Dabei wurde Jakarta EE\textsuperscript{\ref{sec:jakarta-ee}} und Eclipse Microprofile\textsuperscript{\ref{sec:microprofile}} verwendet, um eine Rest-Schnittstelle für das Frontend zu bieten. Durch das Verwenden von Microprofile lässt sich die Anwendung einfach in einem Payara Application Server starten. Dieser wurde mithilfe eines Docker Images umgesetzt, wodurch er sich einfach in einer Cloud Umgebung oder klassisch auf einem Windows- oder Linux-Server bereitstellen lässt.
+Das Backend der Anwendung dient als Proxy zwischen Frontend und externer Schnittstelle und wurde in Java geschrieben. Dabei wurde Jakarta EE\textsuperscript{\ref{sec:jakarta-ee}} und Eclipse Microprofile\textsuperscript{\ref{sec:microprofile}} verwendet, um eine Rest-Schnittstelle für das Frontend zu bieten. Durch das Verwenden von Microprofile lässt sich die Anwendung einfach in einem Payara Application Server starten. Dieser wurde für die Entwicklungsumgebung mithilfe eines Docker Images umgesetzt, wodurch er sich schnell starten lässt.
 \begin{center}
 	\captionsetup{type=figure}
 	\includegraphics[height=5cm]{images/backend-structure}
-	\captionof{figure}{Aufbau des Backends}
+	\captionof{figure}[Backend in Entwicklungs- und Produktionsumgebung]{Vergleich: Entwicklungsumgebung (l.) \& Produktionsumgebung (r.)}
 \end{center}
+Hierbei wurde für die Produktionsumgebung ein anderer Ansatz gewählt. Das \acrshort{war} wird direkt mit Payara Micro auf Heroku\textsuperscript{\ref{sec:heroku}} gestartet. Heroku erkennt das Projekt automatisch als Maven-Projekt und installiert Bibliotheken. Die Konfiguration kann in dem \href{https://github.com/featherkraken/featherkraken/blob/master/Procfile}{Procfile} gesehen werden. Dabei wird das Payara Micro \acrshort{jar} gedownloaded und benutzt um die Anwendung zu starten.
 \subsubsection{Services}
 Das Backend bietet verschiedene Rest-Services für ein User Interface, um nach Flughäfen und Flügen suchen zu können.
 \paragraph[Flughafensuche]{Flughafensuche: GET /airports}\label{sec:airport-search}
@@ -235,7 +241,8 @@ Um bestimmte Flughäfen mit einem Teil des Flughafen- oder Städtenamens suchen 
 \begin{center}
 	\texttt{GET www.featherkraken-example.com/airports?query=Ams}
 \end{center}
-Damit werden alle Flughäfen gesucht, welche den Wortteil 'Ams' im \acrlong{iata} oder Städtenamen enthalten. Die Antwort des Services besteht aus einer Liste gefundener Flughäfen, welche jeweils \acrlong{iata}, vollen Anzeigenamen und Koordinaten enthalten.
+Damit werden alle Flughäfen gesucht, welche den Wortteil 'Ams' im \acrlong{iata} oder Städtenamen enthalten. Die Antwort des Services besteht aus einer Liste gefundener Flughäfen, welche jeweils \acrlong{iata}, vollen Anzeigenamen und Koordinaten enthalten.\\
+\textbf{Heroku:}\hfill \href{https://featherkraken.herokuapp.com/featherkraken/rest/airports?query=Ams}{https://featherkraken.herokuapp.com/featherkraken/rest/airports}
 \paragraph[Flugsuche]{Flugsuche: POST /flights}
 Die Kernfunktion des Backends steckt hinter dem Endpoint \texttt{/flights}, welcher eingehende Suchanfragen in ein für die externe Schnittstelle verständliches Format übersetzt und das Suchergebnis dann zurückgibt. Suchparameter werden hier nicht in der URL des Requests übergeben, sondern mit einem POST im Request-Body, da die Suchanfrage so übersichtlicher und leichter zu dokumentieren ist. Bei der Suche kann wahlweise ein Radius angegeben werden, dann werden Flüge von umliegenden Abflughäfen gesucht.
 \newpage
@@ -268,7 +275,8 @@ So kann eine Suchanfrage für Flüge von Frankfurt und Umgebung (100km) zum Beis
 	"tripType": "Round trip"
 }
 \end{Verbatim}
-Für die Flughafenobjekte in \texttt{source} und \texttt{target} ist nur der eindeutige \acrlong{iata} in \texttt{source.name} entscheidend. Der Radius wird in Kilometern angegeben. In diesem Beispiel werden Hin- und Rückflüge zwischen Frankfurt und Los Angeles in der Klasse 'Business' gesucht, wobei auch geringere Klassen benutzt werden können (\texttt{mixClasses}). Außerdem ist zu erkennen, wie ein variables Abflugdatum (11.11. - 13.11.2020) angegeben werden kann.
+Für die Flughafenobjekte in \texttt{source} und \texttt{target} ist nur der eindeutige \acrlong{iata} in \texttt{source.name} entscheidend. Der Radius wird in Kilometern angegeben. In diesem Beispiel werden Hin- und Rückflüge zwischen Frankfurt und Los Angeles in der Klasse 'Business' gesucht, wobei auch geringere Klassen benutzt werden können (\texttt{mixClasses}). Außerdem ist zu erkennen, wie ein variables Abflugdatum (11.11. - 13.11.2020) angegeben werden kann.\\
+\textbf{Heroku:}\hfill \href{https://featherkraken.herokuapp.com/featherkraken/rest/flights}{https://featherkraken.herokuapp.com/featherkraken/rest/flights}
 \subsection{Frontend}
 Das Frontend ist eine Web-Anwendung, die mit dem Framework React.js\textsuperscript{\ref{sec:react}} in TypeScript\textsuperscript{\ref{sec:typescript}} geschrieben wurde.\\
 Durch den Einsatz von der Bibliothek \texttt{react-bootstrap} lassen sich Komponenten im Material Design einfach zusammenbauen. Material Design wurde von Google entwickelt und ist eine Design-Richtlinie für Oberflächen. Der Vorteil ist, dass man dabei kein Grafikdesigner sein muss, um eine ansprechende Webanwendung zu bauen.
@@ -321,8 +329,7 @@ In diesem Kapitel wird zunächst in einem Ausblick auf Möglichkeiten zur Verbes
 Um die Funktion der Anwendung zu erweitern, könnte man zum Beispiel weitere externe Schnittstellen anbinden, um eventuell billigere Flüge als die von Kiwi.com zu finden. Dazu wurden die betroffenen Klassen des Java-Backends schon so abstrakt geschrieben, sodass dies mit angemessenen Aufwand umsetzbar ist.\\
 Dabei ist jedoch anzumerken, dass diese externen Aufrufe bist jetzt nicht asynchron erfolgen. Das heißt, dass gewartet wird bis alle externen Schnittstellen geantwortet haben. Das hat zur Folge, dass die Antwortzeit äquivalent zur langsamsten Schnittstelle ist. Um das zu ändern, muss zunächst evaluiert werden, ob diese asynchron beantwortet werden können.\\
 Als weitere Verbesserung kann die Geschwindigkeit der Aufrufe dokumentiert werden. Damit kann entschieden werden, ob bestimmte externe Schnittstellen zu langsam sind und damit wieder entfernt werden sollten. Für diese Art von Monitoring gibt es bereits Lösungen wie \href{https://prometheus.io/}{\textit{Prometheus}} oder die eingebaute Funktion von Eclipse Microprofile mithilfe sogenannter \textit{Metrics}.\\
-Des Weiteren kann auch ein Entfernungsfilter für den Zielflughafen auf die selbe Art wie für den Startflughafen hinzugefügt werden. Dazu müsste das Backend und die Oberfläche angepasst werden. Da dies jedoch nicht im Fokus der Aufgabe stand, sei das jedoch nur als Idee anzumerken.\\
-Es wurde versucht, das Java-Backend auf \href{https://www.heroku.com/}{\textit{Heroku}} zu hosten, damit sie jederzeit im Internet genutzt werden kann. Dies war aber selbst nach vielen Tagen nicht nachvollziehbar, also wurde dieser Ansatz verworfen. Als Zwischenlösung könnte die Anwendung auf einem Linux-Server bereitgestellt werden. Dies sollte automatisch mit jeder Änderung im GitHub Repository erfolgen, wie es mit \textit{Heroku} versucht wurde.
+Des Weiteren kann auch ein Entfernungsfilter für den Zielflughafen auf die selbe Art wie für den Startflughafen hinzugefügt werden. Dazu müsste das Backend und die Oberfläche angepasst werden. Da dies aber nicht im Fokus der Aufgabe stand, sei das jedoch nur als Idee anzumerken.
 \subsection{Zusammenfassung}
 Nachdem die Aufgabenstellung evaluiert wurde, konnte schrittweise eine Softwarelösung entworfen werden. Dabei wurden verschiedene Abstraktionsebenen des Problems betrachtet und jeweilige Lösungen gefunden. Mit den gewählten Technologien wurde eine Webanwendung und eine Serveranwendung entwickelt, welche sich durch hohe Plattformunabhängigkeit auszeichnen. Es wurde darauf geachtet, dass die Anwendung leicht erweitert werden kann und der Code verständlich ist. Die Anwendungen werden mit \acrfull{ci} automatisch getestet und im Falle der Webanwendung auch immer mit dem neuesten Stand im Internet veröffentlicht. Abschließend wurde ein Ausblick auf Verbesserungsmöglichkeiten und Ansätze dafür aufgeführt.
 \end{sloppypar}

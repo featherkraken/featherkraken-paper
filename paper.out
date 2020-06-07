@@ -18,23 +18,24 @@
 \BOOKMARK [2][-]{subsection.2.7}{MicroProfile}{section.2}% 18
 \BOOKMARK [2][-]{subsection.2.8}{Payara}{section.2}% 19
 \BOOKMARK [2][-]{subsection.2.9}{Postman}{section.2}% 20
-\BOOKMARK [2][-]{subsection.2.10}{React.js}{section.2}% 21
-\BOOKMARK [2][-]{subsection.2.11}{TypeScript}{section.2}% 22
-\BOOKMARK [1][-]{section.3}{Entwurf}{}% 23
-\BOOKMARK [2][-]{subsection.3.1}{Auswahl der externen Schnittstelle}{section.3}% 24
-\BOOKMARK [2][-]{subsection.3.2}{Aufbau der Anwendung}{section.3}% 25
-\BOOKMARK [2][-]{subsection.3.3}{Datenmodell}{section.3}% 26
-\BOOKMARK [3][-]{subsubsection.3.3.1}{SearchRequest}{subsection.3.3}% 27
-\BOOKMARK [3][-]{subsubsection.3.3.2}{SearchResult}{subsection.3.3}% 28
-\BOOKMARK [2][-]{subsection.3.4}{Framework}{section.3}% 29
-\BOOKMARK [1][-]{section.4}{Implementierung}{}% 30
-\BOOKMARK [2][-]{subsection.4.1}{Backend}{section.4}% 31
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Services}{subsection.4.1}% 32
-\BOOKMARK [2][-]{subsection.4.2}{Frontend}{section.4}% 33
-\BOOKMARK [1][-]{section.5}{Testing}{}% 34
-\BOOKMARK [2][-]{subsection.5.1}{Automatische Tests}{section.5}% 35
-\BOOKMARK [2][-]{subsection.5.2}{Manuelle Tests}{section.5}% 36
-\BOOKMARK [1][-]{section.6}{Fazit}{}% 37
-\BOOKMARK [2][-]{subsection.6.1}{Ausblick}{section.6}% 38
-\BOOKMARK [2][-]{subsection.6.2}{Zusammenfassung}{section.6}% 39
-\BOOKMARK [1][-]{section*.21}{Literatur}{}% 40
+\BOOKMARK [2][-]{subsection.2.10}{Heroku}{section.2}% 21
+\BOOKMARK [2][-]{subsection.2.11}{React.js}{section.2}% 22
+\BOOKMARK [2][-]{subsection.2.12}{TypeScript}{section.2}% 23
+\BOOKMARK [1][-]{section.3}{Entwurf}{}% 24
+\BOOKMARK [2][-]{subsection.3.1}{Auswahl der externen Schnittstelle}{section.3}% 25
+\BOOKMARK [2][-]{subsection.3.2}{Aufbau der Anwendung}{section.3}% 26
+\BOOKMARK [2][-]{subsection.3.3}{Datenmodell}{section.3}% 27
+\BOOKMARK [3][-]{subsubsection.3.3.1}{SearchRequest}{subsection.3.3}% 28
+\BOOKMARK [3][-]{subsubsection.3.3.2}{SearchResult}{subsection.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.4}{Framework}{section.3}% 30
+\BOOKMARK [1][-]{section.4}{Implementierung}{}% 31
+\BOOKMARK [2][-]{subsection.4.1}{Backend}{section.4}% 32
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Services}{subsection.4.1}% 33
+\BOOKMARK [2][-]{subsection.4.2}{Frontend}{section.4}% 34
+\BOOKMARK [1][-]{section.5}{Testing}{}% 35
+\BOOKMARK [2][-]{subsection.5.1}{Automatische Tests}{section.5}% 36
+\BOOKMARK [2][-]{subsection.5.2}{Manuelle Tests}{section.5}% 37
+\BOOKMARK [1][-]{section.6}{Fazit}{}% 38
+\BOOKMARK [2][-]{subsection.6.1}{Ausblick}{section.6}% 39
+\BOOKMARK [2][-]{subsection.6.2}{Zusammenfassung}{section.6}% 40
+\BOOKMARK [1][-]{section*.21}{Literatur}{}% 41

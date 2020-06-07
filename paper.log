@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.9)  7 JUN 2020 11:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.9)  7 JUN 2020 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -713,17 +713,17 @@ File: german.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 142.
 LaTeX Info: Redefining \BHBI on input line 143.
 ))
-<images/intension.png, id=165, 480.79625pt x 112.42pt>
+<images/intension.png, id=169, 480.79625pt x 112.42pt>
 File: images/intension.png Graphic file (type png)
 <use images/intension.png>
 Package pdftex.def Info: images/intension.png  used on input line 40.
 (pdftex.def)             Requested size: 170.71652pt x 39.91708pt.
-<images/dhbw.png, id=168, 2007.5pt x 838.13126pt>
+<images/dhbw.png, id=172, 2007.5pt x 838.13126pt>
 File: images/dhbw.png Graphic file (type png)
 <use images/dhbw.png>
 Package pdftex.def Info: images/dhbw.png  used on input line 40.
 (pdftex.def)             Requested size: 113.81102pt x 47.51053pt.
-<images/featherkraken.png, id=169, 513.92pt x 513.92pt>
+<images/featherkraken.png, id=173, 513.92pt x 513.92pt>
 File: images/featherkraken.png Graphic file (type png)
 <use images/featherkraken.png>
 Package pdftex.def Info: images/featherkraken.png  used on input line 45.
@@ -748,7 +748,7 @@ l.73 \newpage
 identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.38 ....1}Automatische Tests}{18}{subsection.5.1}
+l.38 ...on}{\numberline {5}Testing}{18}{section.5}
                                                   % [4])
 \tf@toc=\write8
 \openout8 = `paper.toc'.
@@ -768,12 +768,12 @@ l.75 \newpage
                    \relax 
 l.79 \newpage
               [6] [1]
-<images/ERM-Entity.png, id=308, 3016.26875pt x 612.2875pt>
+<images/ERM-Entity.png, id=317, 3016.26875pt x 612.2875pt>
 File: images/ERM-Entity.png Graphic file (type png)
 <use images/ERM-Entity.png>
 Package pdftex.def Info: images/ERM-Entity.png  used on input line 100.
 (pdftex.def)             Requested size: 426.79135pt x 86.63525pt.
-<images/ERM-Attributes.png, id=310, 1309.89375pt x 205.76875pt>
+<images/ERM-Attributes.png, id=319, 1309.89375pt x 205.76875pt>
 File: images/ERM-Attributes.png Graphic file (type png)
 <use images/ERM-Attributes.png>
 Package pdftex.def Info: images/ERM-Attributes.png  used on input line 108.
@@ -805,33 +805,30 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Underfull \vbox (badness 1383) has occurred while \output is active []
 
  [5]
-Underfull \vbox (badness 1681) has occurred while \output is active []
-
- [6]
-[7]
+[6] [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-<images/client-design.png, id=400, 853.1875pt x 945.5325pt>
+<images/client-design.png, id=413, 853.1875pt x 945.5325pt>
 File: images/client-design.png Graphic file (type png)
 <use images/client-design.png>
-Package pdftex.def Info: images/client-design.png  used on input line 196.
+Package pdftex.def Info: images/client-design.png  used on input line 201.
 (pdftex.def)             Requested size: 199.16928pt x 220.72855pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9 <./images/client-design.png>]
-<images/datamodel-SearchRequest.png, id=407, 5189.3875pt x 1611.01875pt>
+<images/datamodel-SearchRequest.png, id=421, 5189.3875pt x 1611.01875pt>
 File: images/datamodel-SearchRequest.png Graphic file (type png)
 <use images/datamodel-SearchRequest.png>
 Package pdftex.def Info: images/datamodel-SearchRequest.png  used on input line
- 205.
+ 210.
 (pdftex.def)             Requested size: 426.79135pt x 132.47311pt.
-<images/datamodel-SearchResult.png, id=410, 4526.9125pt x 2639.8625pt>
+<images/datamodel-SearchResult.png, id=424, 4526.9125pt x 2639.8625pt>
 File: images/datamodel-SearchResult.png Graphic file (type png)
 <use images/datamodel-SearchResult.png>
 Package pdftex.def Info: images/datamodel-SearchResult.png  used on input line 
-213.
+218.
 (pdftex.def)             Requested size: 426.79135pt x 248.85605pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -840,40 +837,40 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11 <./images/datamodel-SearchResult.png>] [12]
-<images/backend-structure.png, id=429, 607.26875pt x 958.58125pt>
+<images/backend-structure.png, id=442, 1611.01875pt x 958.58125pt>
 File: images/backend-structure.png Graphic file (type png)
 <use images/backend-structure.png>
-Package pdftex.def Info: images/backend-structure.png  used on input line 228.
-(pdftex.def)             Requested size: 90.1227pt x 142.26378pt.
+Package pdftex.def Info: images/backend-structure.png  used on input line 233.
+(pdftex.def)             Requested size: 239.08585pt x 142.26378pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
 [13 <./images/backend-structure.png>]
-Underfull \hbox (badness 1968) in paragraph at lines 240--241
+Underfull \hbox (badness 1968) in paragraph at lines 247--248
  []\T1/phv/b/n/12 Flugsuche: POST /flights[] \T1/phv/m/n/12 Die Kern-funk-tion 
 des Back-ends steckt hin-ter
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 240--241
+Underfull \hbox (badness 1062) in paragraph at lines 247--248
 \T1/phv/m/n/12 dem End-point \T1/cmtt/m/n/12 /flights\T1/phv/m/n/12 , welch-er 
 einge-hende Suchan-fra-gen in ein für die
  []
 
 [14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1769) has occurred while \output is active []
 
  [15]
-<images/frontend-screenshot.png, id=451, 2433.09pt x 1221.56375pt>
+<images/frontend-screenshot.png, id=469, 2433.09pt x 1221.56375pt>
 File: images/frontend-screenshot.png Graphic file (type png)
 <use images/frontend-screenshot.png>
-Package pdftex.def Info: images/frontend-screenshot.png  used on input line 277
+Package pdftex.def Info: images/frontend-screenshot.png  used on input line 285
 .
 (pdftex.def)             Requested size: 426.79135pt x 214.26149pt.
 
-Underfull \hbox (badness 1038) in paragraph at lines 281--285
+Underfull \hbox (badness 1038) in paragraph at lines 289--293
 \T1/phv/m/n/12 In den Eingabefeldern darunter kön-nen Such-pa-ram-e-ter wie Sta
 rt-flughafen,
  []
@@ -882,37 +879,37 @@ rt-flughafen,
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16 <./images/frontend-screenshot.png>] [17]
-Underfull \hbox (badness 1515) in paragraph at lines 287--289
+Underfull \hbox (badness 1515) in paragraph at lines 295--297
 \T1/phv/m/n/12 Zu guter Let-zt wur-den die Rest-Schnittstelle und die Ober-fläc
 he mit der
  []
 
 
-Underfull \hbox (badness 1721) in paragraph at lines 287--289
+Underfull \hbox (badness 1721) in paragraph at lines 295--297
 \T1/phv/m/n/12 Er-wartung der gewün-scht-en Ergeb-nisse regelmäÿig manuell gete
 stet und
  []
 
 
-Underfull \hbox (badness 1253) in paragraph at lines 290--293
+Underfull \hbox (badness 1253) in paragraph at lines 298--301
 \T1/phv/m/sl/12 Cir-cle-CI \T1/phv/m/n/12 aus-ge-führt, wenn die Än-derun-gen i
 n das GitHub Repos-i-to-ry ge-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 290--293
+Underfull \hbox (badness 1264) in paragraph at lines 298--301
 \T1/phv/m/n/12 pusht wer-den. Pull Re-quests sind so kon-fig-uri-ert, dass sie 
 nur nach er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--297
+Underfull \hbox (badness 10000) in paragraph at lines 302--305
 \T1/phv/m/n/12 Zusätzlich zu den au-toma-tis-chen Tests gibt es eine \T1/phv/m/
 sl/12 Postman-
  []
 
 
-Underfull \hbox (badness 2521) in paragraph at lines 294--297
+Underfull \hbox (badness 2521) in paragraph at lines 302--305
 \T1/phv/m/sl/12 Collection$[]$ \T1/phv/m/n/12 für die Rest-Schnittstellen des B
 ack-ends. Diese kann unter
  []
@@ -922,7 +919,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18]
 [19]
-Underfull \hbox (badness 1205) in paragraph at lines 319--320
+Underfull \hbox (badness 1205) in paragraph at lines 327--328
 \T1/phv/m/n/12 In diesem Kapi-tel wird zunächst in einem Aus-blick auf Möglichk
 eit-en zur
  []
@@ -944,24 +941,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--38
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 334.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 341.
  [22]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 334.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 341.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 334.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 334.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 341.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 341.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 8B68ACB134F16EF7AAD035469588BF26;2432.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 334.
+(rerunfilecheck)             Checksum: 6895EE1C798CBAD6F67A77F718F42C9C;2489.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 341.
  ) 
 Here is how much of TeX's memory you used:
- 16444 strings out of 482862
- 270601 string characters out of 5957990
- 608627 words of memory out of 5000000
- 31278 multiletter control sequences out of 15000+600000
+ 16451 strings out of 482862
+ 270683 string characters out of 5957990
+ 608788 words of memory out of 5000000
+ 31283 multiletter control sequences out of 15000+600000
  558443 words of font info for 53 fonts, out of 8000000 for 9000
  42 hyphenation exceptions out of 8191
- 51i,8n,77p,1000b,877s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,8n,77p,1000b,880s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr
 /local/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/texmf-dist/
@@ -969,10 +966,10 @@ fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/texmf-dist/fonts/t
 ype1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/texmf-dist/fonts/type1/urw/hel
 vetic/uhvr8a.pfb></usr/local/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8
 a.pfb>
-Output written on paper.pdf (28 pages, 1097796 bytes).
+Output written on paper.pdf (28 pages, 1130753 bytes).
 PDF statistics:
- 555 PDF objects out of 1000 (max. 8388607)
- 493 compressed objects within 5 object streams
- 101 named destinations out of 1000 (max. 500000)
- 371 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 575 PDF objects out of 1000 (max. 8388607)
+ 512 compressed objects within 6 object streams
+ 103 named destinations out of 1000 (max. 500000)
+ 379 words of extra memory for PDF output out of 10000 (max. 10000000)
 
