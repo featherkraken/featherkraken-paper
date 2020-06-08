@@ -203,11 +203,13 @@ Bei dem ersten Entwurf der Anwendung fiel auf, dass die gesamte Funktionalität 
 Das \acrlong{erm} für das Datenmodell wurde hier aufgeteilt in Suchanfrage (\texttt{SearchRequest}) und Suchergebnis (\texttt{SearchResult}). Sowohl die Serveranwendung als auch das User Interface implementieren jeweils dieses Datenmodell, sodass Daten in einem einheitlichen und überschaubaren Format ausgetauscht werden können.
 \subsubsection{SearchRequest}
 Eingehende Anfragen an den Service (\texttt{SearchRequest}) haben verschiedene Parameter, welche die zu Beginn genannten Pflichtanforderungen\textsuperscript{\ref{sec:requirements}} abdecken. Komplexe Attribute, wie die Zeitspanne (\texttt{Timespan}) für An- und Abreise sowie der Ursprungs- und Ziel-Flughafen (\texttt{Airport}), wurden in eigene Objekte ausgelagert, damit sie auf diese Weise wiederverwendet werden können.
+\vspace{2cm}
 \begin{center}
 	\captionsetup{type=figure}
 	\includegraphics[width=\textwidth]{images/datamodel-SearchRequest}
 	\captionof{figure}[\acrshort{erm} SearchRequest]{\acrlong{erm} des SearchRequest Objekts}
 \end{center}
+\newpage
 \subsubsection{SearchResult}
 Antworten des Service (\texttt{SearchResult}) sind etwas komplexer als Anfragen aufgebaut, teilen jedoch manche Attribute mit diesen. Dabei enthält ein Suchergebnis eine Ansammlung von sogenannten \texttt{Trips}, welche sich aus Flügen (\texttt{Flight}) der An- und Abreise zusammensetzen. Diese Flügen haben widerrum selbstverständlich jeweils einen Start- und Zielflughafen, welche in dem \texttt{Route}-Objekt mit Informationen zu Abflug- und Ankunftzeiten sowie der Airline enthalten sind.\\
 Bei erster Betrachtung fällt auf, dass Informationen über Airlines und Zeiten redundant sind, was jedoch für die optimale Verarbeitung in der Oberfläche von Vorteil ist.
@@ -232,6 +234,7 @@ Das Backend der Anwendung dient als Proxy zwischen Frontend und externer Schnitt
 	\captionof{figure}[Backend in Entwicklungs- und Produktionsumgebung]{Vergleich: Entwicklungsumgebung (l.) \& Produktionsumgebung (r.)}
 \end{center}
 Für die Produktionsumgebung wurde ein anderer Ansatz gewählt. Das \acrshort{war} wird direkt mit Payara Micro auf Heroku\textsuperscript{\ref{sec:heroku}} gestartet. Diese Lösung war notwendig, da der Einsatz eines Docker-Containers nicht für Heroku eignet. Das Projekt wird dabei automatisch als Maven-Projekt erkannt und benötigte Bibliotheken werden installiert. Die Konfiguration kann in dem \href{https://github.com/featherkraken/featherkraken/blob/master/Procfile}{Procfile} gesehen werden. Um die Anwendung zu starten, wird das Payara Micro \acrshort{jar} heruntergeladen und ausgeführt, um die Anwendung zu starten.
+\newpage
 \subsubsection{Services}
 Zur Suche nach Flughäfen und Flügen bietet das Backend verschiedene Rest-Services für ein User Interface an.
 \paragraph[Flughafensuche]{Flughafensuche: GET /airports}\label{sec:airport-search}
